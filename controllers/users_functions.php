@@ -20,18 +20,19 @@ if(!function_exists('getUsersData')){
         }else{
             if(mysqli_num_rows($query)>0){
                 while($row = mysqli_fetch_array($query)){
+                    $id = $row['user_id'];
                     ?>
                      <tr>
                         <td class="txt-oflo"><?php echo $row['first_name'] ?></td>
                         <td><?php echo $row['middle_name'] ?></td>
                         <td class="txt-oflo"><?php echo $row['last_name'] ?></td>
-                        <td class="txt-oflo"><?php echo $row['name_extension'] ?></td>
+                        <td class="txt-oflo"><?php echo $row['name_extension'] ?></td>g
                         <td class="txt-oflo"><?php echo $row['mobile_number'] ?></td>
                         <td class="txt-oflo"><?php echo $row['address'] ?></td>
                         <td class="txt-oflo"><?php echo getDepartmentDetailsByDepartmentId($conn, $row['department_id'])[2]; ?></td>
                         <td class="txt-oflo"><?php echo $row['role_type'] ?></td>
                         <td class="txt-oflo"><?php echo $row['user_status'] ?></td>
-                        <td class="txt-oflo"><a href = "delete_user.php?user_id=<?php echo $row['user_id'] ?>">Delete</a></td>
+                        <td class="txt-oflo"><a href = "delete_user.php<?php echo '?id='.$id; ?>">Delete</a></td>
                     </tr>
                     <?php
                 }
