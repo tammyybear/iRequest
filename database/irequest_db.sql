@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2019 at 09:21 AM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.10
+-- Generation Time: May 09, 2019 at 10:57 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -66,13 +66,6 @@ CREATE TABLE `department_tb` (
   `department_description` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `department_tb`
---
-
-INSERT INTO `department_tb` (`department_id`, `department_name`, `department_description`) VALUES
-(1, 'CICT', 'College of Communication and Information Technology');
-
 -- --------------------------------------------------------
 
 --
@@ -126,13 +119,6 @@ CREATE TABLE `users_tb` (
   `role_type` varchar(300) DEFAULT NULL,
   `user_status` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `users_tb`
---
-
-INSERT INTO `users_tb` (`user_id`, `first_name`, `middle_name`, `last_name`, `name_extension`, `mobile_number`, `address`, `username`, `password`, `department_id`, `role_type`, `user_status`) VALUES
-(1, 'Vlaire', 'Cheng', 'Wu', 'N/A', '09477309754', 'Clark Pampanga', 'VlaireWu', 'iRequest_12345', 1, 'Department Head', 'Active');
 
 --
 -- Indexes for dumped tables
@@ -192,7 +178,7 @@ ALTER TABLE `bookings_tb`
 -- AUTO_INCREMENT for table `department_tb`
 --
 ALTER TABLE `department_tb`
-  MODIFY `department_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `department_id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `inventory_category_tb`
@@ -210,7 +196,7 @@ ALTER TABLE `inventory_items_tb`
 -- AUTO_INCREMENT for table `users_tb`
 --
 ALTER TABLE `users_tb`
-  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables

@@ -1,9 +1,9 @@
 <?php
 
-$servername = "files.000webhost.com:21";
-$dbusername = "id9548842_irequest";
-$dbpassword = "iRequest_12345";
-$dbname = "id9548842_irequest";
+$servername = "remotemysql.com:3306";
+$dbusername = "M5vKHHE91E ";
+$dbpassword = "6pNhpSeMsR";
+$dbname = "M5vKHHE91E";
 
 $conn = mysqli_connect($servername, $dbusername, $dbpassword, $dbname);
 
