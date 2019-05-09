@@ -23,7 +23,7 @@ if(countResult($conn, "SELECT * from admin_tb where admin_username = '$username'
         redirectPagewithAlert("department_member_dashboard.php", "Welcome Department Member");
     }
 }else{
-    redirectPagewithAlert("login.php", "Invalid Username/Password");
+    redirectPagewithAlert("index.php", "Invalid Username/Password");
 }
 
 ?>
