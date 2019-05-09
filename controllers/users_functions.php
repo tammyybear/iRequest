@@ -56,12 +56,12 @@ if(!function_exists('getAddUserForm')){
                                     <input type="text" placeholder="First Name" name="first_name" class="form-control form-control-line" required> </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-12">Middle Name< (Optional)</label>
+                                <label class="col-md-12">Middle Name (Optional)</label>
                                 <div class="col-md-12">
                                     <input type="text" placeholder="Middle Name" name="middle_name" class="form-control form-control-line"> </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-12">Last Name</label>
+                                <label class="col-md-12">Last Name *</label>
                                 <div class="col-md-12">
                                     <input type="text" placeholder="Last Name" name="last_name" class="form-control form-control-line" required> </div>
                             </div>
@@ -71,12 +71,12 @@ if(!function_exists('getAddUserForm')){
                                     <input type="text" placeholder="Name Extension" name="name_extension" class="form-control form-control-line"> </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-12">Mobile Number</label>
+                                <label class="col-md-12">Mobile Number *</label>
                                 <div class="col-md-12">
                                     <input type="text" placeholder="Mobile Number" name="mobile_number" class="form-control form-control-line" required> </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-12">Address</label>
+                                <label class="col-md-12">Address *</label>
                                 <div class="col-md-12">
                                     <input type="text" placeholder="Address" name="address" class="form-control form-control-line" required> </div>
                             </div>
