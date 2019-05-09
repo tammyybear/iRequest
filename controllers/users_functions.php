@@ -51,14 +51,14 @@ if(!function_exists('getAddUserForm')){
                     <div class="white-box">
                         <form class="form-horizontal form-material" method="post" action="add_user_action.php">
                             <div class="form-group">
-                                <label class="col-md-12">First Name</label>
+                                <label class="col-md-12">First Name *</label>
                                 <div class="col-md-12">
                                     <input type="text" placeholder="First Name" name="first_name" class="form-control form-control-line" required> </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-12">Middle Name</label>
+                                <label class="col-md-12">Middle Name< (Optional)</label>
                                 <div class="col-md-12">
-                                    <input type="text" placeholder="Middle Name" name="middle_name" class="form-control form-control-line" required> </div>
+                                    <input type="text" placeholder="Middle Name" name="middle_name" class="form-control form-control-line"> </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12">Last Name</label>
@@ -66,9 +66,9 @@ if(!function_exists('getAddUserForm')){
                                     <input type="text" placeholder="Last Name" name="last_name" class="form-control form-control-line" required> </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-12">Name Extension</label>
+                                <label class="col-md-12">Name Extension (Optional)</label>
                                 <div class="col-md-12">
-                                    <input type="text" placeholder="Name Extension" name="name_extension" class="form-control form-control-line" required> </div>
+                                    <input type="text" placeholder="Name Extension" name="name_extension" class="form-control form-control-line"> </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12">Mobile Number</label>
