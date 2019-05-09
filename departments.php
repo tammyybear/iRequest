@@ -81,7 +81,7 @@ include "database/config.php";
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="white-box">
-                            <h3 class="box-title">Recent sales
+                            <h3 class="box-title">
                             <div class="table-responsive">
                                 <table class="table ">
                                     <thead>
