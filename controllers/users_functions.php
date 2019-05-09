@@ -31,7 +31,7 @@ if(!function_exists('getUsersData')){
                         <td class="txt-oflo"><?php echo getDepartmentDetailsByDepartmentId($conn, $row['department_id'])[2]; ?></td>
                         <td class="txt-oflo"><?php echo $row['role_type'] ?></td>
                         <td class="txt-oflo"><?php echo $row['user_status'] ?></td>
-                        <td class="txt-oflo"><a href = "delete_user.php?user_id = <?php echo $row['user_id'] ?>">Delete</a></td>
+                        <td class="txt-oflo"><a href = "delete_user.php?user_id=<?php echo $row['user_id'] ?>">Delete</a></td>
                     </tr>
                     <?php
                 }
