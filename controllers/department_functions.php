@@ -9,8 +9,8 @@ if(!function_exists('getDepartmentData')){
                    <td class="txt-oflo"><?php echo $row['department_name'] ?></td>
                    <td class="txt-oflo"><?php echo $row['department_description'] ?></td>
                    <td class="txt-oflo"><?php echo getDepartmentDetailsByDepartmentId($conn, $row['department_id'])[2] ?> </td>
-                   <td class="txt-oflo"><a href="edit_department.php?department_id = <?php $row['department_id'] ?>">Edit</a></td>
-                   <td class="txt-oflo"><a href="delete_department.php?department_id = <?php $row['department_id'] ?>">Delete</a></td>
+                   <td class="txt-oflo"><a href="edit_department.php<?php echo '?department_id='.$row['department_id']; ?>">Edit</a></td>
+                   <td class="txt-oflo"><a href="delete_department.php<?php echo '?department_id='.$row['department_id']; ?>">Delete</a></td>
                </tr>
                <?php
             }
