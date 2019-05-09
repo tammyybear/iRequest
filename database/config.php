@@ -1,6 +1,6 @@
 <?php
 
-$servername = "files.000webhost.com";
+$servername = "files.000webhost.com:21";
 $dbusername = "id9548842_irequest";
 $dbpassword = "iRequest_12345";
 $dbname = "id9548842_irequest";
