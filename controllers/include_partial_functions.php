@@ -84,28 +84,28 @@ if(!function_exists('get_NavBlade')){
                     <div class="sidebar-nav navbar-collapse slimscrollsidebar">
                         <ul class="nav" id="side-menu">
                             <li style="padding: 10px 0 0;">
-                                <a href="admin_dashboard.php" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
+                                <a href="admin_dashboard.php" class="waves-effect"><i class="fa fa-dashboard fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
                             </li>
                             <li>
-                                <a href="schedules.php" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i><span class="hide-menu">Schedules</span></a>
+                                <a href="schedules.php" class="waves-effect"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i><span class="hide-menu">Schedules</span></a>
                             </li>
                             <li>
-                                <a href="services.php" class="waves-effect"><i class="fa fa-globe fa-fw" aria-hidden="true"></i><span class="hide-menu">Services</span></a>
+                                <a href="services.php" class="waves-effect"><i class="fa fa-clipboard-list fa-fw" aria-hidden="true"></i><span class="hide-menu">Services</span></a>
                             </li>
                             <li>
-                                <a href="facilities.php" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i><span class="hide-menu">Facilities</span></a>
+                                <a href="facilities.php" class="waves-effect"><i class="fa fa-building fa-fw" aria-hidden="true"></i><span class="hide-menu">Facilities</span></a>
                             </li>
                             <li>
-                                <a href="auotmobiles.php" class="waves-effect"><i class="fa fa-font fa-fw" aria-hidden="true"></i><span class="hide-menu">Automobiles</span></a>
+                                <a href="auotmobiles.php" class="waves-effect"><i class="fa fa-car fa-fw" aria-hidden="true"></i><span class="hide-menu">Automobiles</span></a>
                             </li>
                             <li>
-                                <a href="departments.php" class="waves-effect"><i class="fa fa-columns fa-fw" aria-hidden="true"></i><span class="hide-menu">Departments</span></a>
+                                <a href="departments.php" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i><span class="hide-menu">Departments</span></a>
                             </li>
                             <li>
-                                <a href="user_management.php" class="waves-effect"><i class="fa fa-columns fa-fw" aria-hidden="true"></i><span class="hide-menu">User Management</span></a>
+                                <a href="user_management.php" class="waves-effect"><i class="fa fa-users fa-fw" aria-hidden="true"></i><span class="hide-menu">User Management</span></a>
                             </li>
                             <li>
-                                <a href="logout_action.php" class="waves-effect"><i class="fa fa-columns fa-fw" aria-hidden="true"></i><span class="hide-menu">Logout</span></a>
+                                <a href="logout_action.php" class="waves-effect"><i class="fa fa-sign-out-alt fa-fw" aria-hidden="true"></i><span class="hide-menu">Logout</span></a>
                             </li>  
                         </ul>
                     </div>
