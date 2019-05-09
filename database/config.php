@@ -1,9 +1,9 @@
 <?php
 
-$servername = "localhost";
-$dbusername = "root";
-$dbpassword = "";
-$dbname = "irequest_db";
+$servername = "files.000webhost.com";
+$dbusername = "id9548842_irequest";
+$dbpassword = "iRequest_12345";
+$dbname = "id9548842_irequest";
 
 $conn = mysqli_connect($servername, $dbusername, $dbpassword, $dbname);
 
