@@ -84,7 +84,7 @@ if(!function_exists('get_NavBlade')){
                     <div class="sidebar-nav navbar-collapse slimscrollsidebar">
                         <ul class="nav" id="side-menu">
                             <li style="padding: 10px 0 0;">
-                                <a href="index.php" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
+                                <a href="admin_dashboard" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
                             </li>
                             <li>
                                 <a href="schedules.php" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i><span class="hide-menu">Schedules</span></a>
@@ -117,7 +117,7 @@ if(!function_exists('get_NavBlade')){
                     <div class="sidebar-nav navbar-collapse slimscrollsidebar">
                         <ul class="nav" id="side-menu">
                             <li style="padding: 10px 0 0;">
-                                <a href="index.php" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
+                                <a href="department_head_dashboard.php" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
                             </li>
                             <li>
                                 <a href="index.php" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i><span class="hide-menu">Schedules</span></a>
@@ -141,7 +141,7 @@ if(!function_exists('get_NavBlade')){
                     <div class="sidebar-nav navbar-collapse slimscrollsidebar">
                         <ul class="nav" id="side-menu">
                             <li style="padding: 10px 0 0;">
-                                <a href="index.php" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
+                                <a href="department_member_dashboard.php" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
                             </li>
                             <li>
                                 <a href="index.php" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i><span class="hide-menu">Schedules</span></a>
