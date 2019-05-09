@@ -112,7 +112,7 @@ include "controllers/include_partial_functions.php";
                 <div class="row">
                     <div class="col-md-12">
                         <div class="white-box">
-                            <h3 class="box-title">Sales Difference</h3>
+                            <h3 class="box-title"></h3>
                             <ul class="list-inline text-right">
                                 <li>
                                     <h5><i class="fa fa-circle m-r-5" style="color: #dadada;"></i>Site A View</h5>
@@ -129,7 +129,7 @@ include "controllers/include_partial_functions.php";
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="white-box">
-                            <h3 class="box-title">Recent sales
+                            <h3 class="box-title">
                                 <div class="col-md-2 col-sm-4 col-xs-12 pull-right">
                                     <select class="form-control pull-right row b-none">
                                         <option>March 2016</option>
