@@ -30,7 +30,7 @@ include "database/config.php";
                 </div>
                 <ul class="nav navbar-top-links navbar-right pull-right">
                     <li>
-                        <a class="profile-pic" href="#">
+                        <a class="profile-pic" href="edit_user.php">
                         <img src="resources/images/avatar.jpg" alt="avatar" width="36" class="img-circle">                        
                         <b class="hidden-xs">Steave</b> </a>
                     </li>
