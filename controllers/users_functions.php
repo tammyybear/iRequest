@@ -30,8 +30,8 @@ if(!function_exists('getUsersData')){
                         <td class="txt-oflo"><?php echo $row['address'] ?></td>
                         <td class="txt-oflo"><?php echo getDepartmentDetailsByDepartmentId($conn, $row['department_id'])[2]; ?></td>
                         <td class="txt-oflo"><?php echo $row['role_type'] ?></td>
-                        <td class="txt-oflo"><?php echo $row['user_status'] ?></td>
-                        <td class="txt-oflo"><a href = "delete_user.php?user_id = <?php echo $row['user_id'] ?>">Delete</a></td>
+                        <td class="txt-oflo"><a href = "edit_user_status.php<?php echo '?id='.$row['user_id']; ?>"><?php echo $row['user_status'] ?></a></td>
+                        <td class="txt-oflo"><a href = "delete_user_action.php<?php echo '?id='.$row['user_id']; ?>">Delete</a></td>                        
                     </tr>
                     <?php
                 }
