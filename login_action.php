@@ -11,7 +11,7 @@ $password = $_POST['password'];
 if(countResult($conn, "SELECT * from admin_tb where admin_username = '$username' and admin_password = '$password'") == 1){
     $_SESSION['user'] = $username;
     $_SESSION['role_type'] = "Admin";
-    redirectPagewithAlert("dashboard_dashboard.php", "Welcome Admin");
+    redirectPagewithAlert("dashboard_admin.php", "Welcome Admin");
 }elseif(countResult($conn, "SELECT * from users_tb where username = '$username' and password = '$password'") == 1){
     $_SESSION['user'] = $username;
     $role_type = getUserDetailsByUsername($conn, $username)[9];

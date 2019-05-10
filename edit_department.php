@@ -63,9 +63,23 @@ $get_id=$_GET['id'];
                     <div class="col-md-8 col-xs-12">
                         <div class="white-box">
                             <form class="form-horizontal form-material" method="post" action="edit_department_action.php<?php echo '?id='.$get_id; ?>">
-                                <?php 
-                                getDepartmentDetailsForEdit($conn, $get_id);
-                                ?>                                
+                                <div class="form-group">
+                                    <label class="col-md-12">Department Name</label>
+                                    <div class="col-md-12">
+                                        <input type="text" value="<?php echo getDepartmentDetailsByDepartmentId($conn, $get_id)[0] ?>" name="department_name" class="form-control form-control-line" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="example-email" class="col-md-12">Department Description</label>
+                                    <div class="col-md-12">
+                                        <input type="text" value="<?php echo getDepartmentDetailsByDepartmentId($conn, $get_id)[1] ?>" class="form-control form-control-line" name="department_description" id="example-email" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <button class="btn btn-success">Update Department</button>
+                                    </div>
+                                </div>
                             </form>
                         </div>
                     </div>
