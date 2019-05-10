@@ -84,7 +84,7 @@ if(!function_exists('get_NavBlade')){
                     <div class="sidebar-nav navbar-collapse slimscrollsidebar">
                         <ul class="nav" id="side-menu">
                             <li style="padding: 10px 0 0;">
-                                <a href="admin_dashboard.php" class="waves-effect"><i class="fa fa-dashboard fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
+                                <a href="dashboard_admin.php" class="waves-effect"><i class="fa fa-dashboard fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
                             </li>
                             <li>
                                 <a href="schedules.php" class="waves-effect"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i><span class="hide-menu">Schedules</span></a>
@@ -99,7 +99,7 @@ if(!function_exists('get_NavBlade')){
                                 <a href="auotmobiles.php" class="waves-effect"><i class="fa fa-car fa-fw" aria-hidden="true"></i><span class="hide-menu">Automobiles</span></a>
                             </li>
                             <li>
-                                <a href="departments.php" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i><span class="hide-menu">Departments</span></a>
+                                <a href="department.php" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i><span class="hide-menu">Departments</span></a>
                             </li>
                             <li>
                                 <a href="user_management.php" class="waves-effect"><i class="fa fa-users fa-fw" aria-hidden="true"></i><span class="hide-menu">User Management</span></a>
@@ -117,7 +117,7 @@ if(!function_exists('get_NavBlade')){
                     <div class="sidebar-nav navbar-collapse slimscrollsidebar">
                         <ul class="nav" id="side-menu">
                             <li style="padding: 10px 0 0;">
-                                <a href="department_head_dashboard.php" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
+                                <a href="dashboard_department_head.php" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
                             </li>
                             <li>
                                 <a href="schedules.php" class="waves-effect"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i><span class="hide-menu">Schedules</span></a>
@@ -141,7 +141,7 @@ if(!function_exists('get_NavBlade')){
                     <div class="sidebar-nav navbar-collapse slimscrollsidebar">
                         <ul class="nav" id="side-menu">
                             <li style="padding: 10px 0 0;">
-                                <a href="department_member_dashboard.php" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
+                                <a href="dashboard_department_member.php" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
                             </li>
                             <li>
                                 <a href="index.php" class="waves-effect"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i><span class="hide-menu">Schedules</span></a>
