@@ -19,7 +19,7 @@ if(!function_exists('get_headBlade')){
             <meta name="description" content="I-Request">
             <meta name="author" content="">
 
-            <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
+            <link rel="icon" type="image/png" sizes="16x16" href="resources/images/favicon.png">
 
             <!-- Bootstrap Core CSS -->
             <link rel="stylesheet" href="resources/bootstrap/dist/css/bootstrap.min.css" >
