@@ -16,12 +16,17 @@ include "controllers/include_partial_functions.php";
     <div id="wrapper">
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top m-b-0">
-            <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-bars"></i></a>
-            <div class="top-left-part"><a class="logo">i<b>Request</b><span class="hidden-xs"></span></a></div>
+            <div class="navbar-header">
+                <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <div class="top-left-part">
+                    <a class="logo" alt="logo">
+                        <b><img src="resources/images/logo.png"/></b>
+                        <small class="hidden-xs"><b>request</b></small>
+                    </a>
+                </div>
             </div>
-            <!-- /.navbar-header -->
-            <!-- /.navbar-top-links -->
-            <!-- /.navbar-static-side -->
         </nav>
         <!-- Left navbar-header -->
         <?php 
