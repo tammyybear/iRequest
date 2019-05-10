@@ -1,6 +1,6 @@
 <?php
 include "controllers/include_partial_functions.php";
-include "controllers/department_functions.php";
+include "controllers/facility_functions.php";
 include "database/config.php";
 ?>
 <!DOCTYPE html>
