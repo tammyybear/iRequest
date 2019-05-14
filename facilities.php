@@ -96,7 +96,7 @@ include "database/config.php";
                                         </tr>
                                     </thead>
                                     <tbody>
-                                      <?php getDepartmentData($conn); ?>
+                                      <?php getInventoryData($conn); ?>
                                     </tbody>
                                 </table>
                             </div>
