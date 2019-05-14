@@ -19,29 +19,29 @@ if(!function_exists('getInventoryData')){
     }
 }
 
-if(!function_exists('getDepartmentDetailsByDepartmentId')){
-    function getDepartmentDetailsByDepartmentId($conn, $department_id){
-        include "database_functions.php";
-        $department_details = array();
-        $users_count = countResult($conn, "SELECT * from users_tb where department_id = '$department_id'");
-        $query = mysqli_query($conn, "SELECT * from department_tb where department_id = '$department_id'");
-        while($row = mysqli_fetch_array($query)){
-            array_push($department_details, $row['department_name'], $row['department_description'], $users_count);
-        }
+// if(!function_exists('getDepartmentDetailsByDepartmentId')){
+//     function getDepartmentDetailsByDepartmentId($conn, $department_id){
+//         include "database_functions.php";
+//         $department_details = array();
+//         $users_count = countResult($conn, "SELECT * from users_tb where department_id = '$department_id'");
+//         $query = mysqli_query($conn, "SELECT * from department_tb where department_id = '$department_id'");
+//         while($row = mysqli_fetch_array($query)){
+//             array_push($department_details, $row['department_name'], $row['department_description'], $users_count);
+//         }
 
-        return $department_details;
-    }
-}
+//         return $department_details;
+//     }
+// }
 
-if(!function_exists('getDepartmentDropDown')){
+if(!function_exists('getInventoryDropDown')){
     function getDepartmentDropDown($conn){
         ?>
-        <select name = "department_id" class="form-control form-control-line" required>
+        <select name = "inventory_cat_id" class="form-control form-control-line" required>
             <?php 
-                $query = mysqli_query($conn, "SELECT * from department_tb");
+                $query = mysqli_query($conn, "SELECT * from inventory_category_tb");
                 while($row = mysqli_fetch_array($query)){
                     ?>
-                    <option value = "<?php echo $row['department_id'] ?>"><?php echo $row['department_name'] ?></option>
+                    <option value = "<?php echo $row['inventory_cat_id'] ?>"><?php echo $row['category'] ?></option>
                     <?php
                 }
             ?>
