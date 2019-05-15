@@ -99,7 +99,7 @@ $get_id=$_GET['id'];
                                         </tr>
                                     </thead>
                                     <tbody>
-                                      <?php getInventoryData($conn); ?>
+                                      <?php getFacilityData($conn); ?>
                                     </tbody>
                                 </table>
                             </div>
