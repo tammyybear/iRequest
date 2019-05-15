@@ -19,19 +19,19 @@ if(!function_exists('getInventoryData')){
     }
 }
 
-// if(!function_exists('getDepartmentDetailsByDepartmentId')){
-//     function getDepartmentDetailsByDepartmentId($conn, $department_id){
-//         include "database_functions.php";
-//         $department_details = array();
-//         $users_count = countResult($conn, "SELECT * from users_tb where department_id = '$department_id'");
-//         $query = mysqli_query($conn, "SELECT * from department_tb where department_id = '$department_id'");
-//         while($row = mysqli_fetch_array($query)){
-//             array_push($department_details, $row['department_name'], $row['department_description'], $users_count);
-//         }
+if(!function_exists('getInventoryDetailsById')){
+    function getInventoryDetailsById($conn, $inventory_item_id){
+        include "database_functions.php";
+        $inventory_details = array();
+        $items_count = countResult($conn, "SELECT * from inventory_items_tb where inventory_item_id = '$inventory_item_id'");
+        $query = mysqli_query($conn, "SELECT * from inventory_items_tb where inventory_item_id = '$inventory_item_id'");
+        while($row = mysqli_fetch_array($query)){
+            array_push($inventory_details, $row['item_name'], $row['item_description'], $items_count);
+        }
 
-//         return $department_details;
-//     }
-// }
+        return $inventory_details;
+    }
+}
 
 if(!function_exists('getInventoryDropDown')){
     function getDepartmentDropDown($conn){
