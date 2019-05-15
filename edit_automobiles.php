@@ -2,6 +2,7 @@
 include "controllers/include_partial_functions.php";
 include "controllers/inventory_functions.php";
 include "database/config.php";
+$get_id=$_GET['id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,20 +62,22 @@ include "database/config.php";
                 <div class="row">
                     <div class="col-md-8 col-xs-12">
                         <div class="white-box">
-                            <form class="form-horizontal form-material" method="post" action="add_automobiles_action.php">
+                            <form class="form-horizontal form-material" method="post" action="edit_automobiles_action.php<?php echo '?id='.$get_id; ?>">
                                 <div class="form-group">
                                     <label class="col-md-12">Automobile Model Name</label>
                                     <div class="col-md-12">
-                                        <input type="text" placeholder="Automobile Model Name" name="automobile_name" class="form-control form-control-line" required> </div>
+                                        <input type="text" value="<?php echo getInventoryDetailsById($conn, $get_id)[0] ?>" name="automobile_name" class="form-control form-control-line" required>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="example-email" class="col-md-12">Automobile Plate No.</label>
                                     <div class="col-md-12">
-                                        <input type="text" placeholder="Automobile Plate No." class="form-control form-control-line" name="automobile_plate" required> </div>
+                                        <input type="text" value="<?php echo getInventoryDetailsById($conn, $get_id)[1] ?>" name="automobile_plate" class="form-control form-control-line" required>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-12">
-                                        <button class="btn btn-success">Add Automobile</button>
+                                        <button class="btn btn-success">Update Automobile</button>
                                     </div>
                                 </div>
                             </form>

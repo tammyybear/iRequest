@@ -61,7 +61,7 @@ include "database/config.php";
                 <div class="row">
                     <div class="col-md-8 col-xs-12">
                         <div class="white-box">
-                            <form class="form-horizontal form-material" method="post" action="add_facility_action.php">
+                            <form class="form-horizontal form-material" method="post" action="add_facilities_action.php">
                                 <div class="form-group">
                                     <label class="col-md-12">Facility Name</label>
                                     <div class="col-md-12">
