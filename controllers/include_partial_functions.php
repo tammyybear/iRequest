@@ -8,6 +8,24 @@ if(!function_exists('get_FooterBlade')){
     }
 }
 
+if(!function_exists('getHeaderUserName')) {
+    function getHeaderUserName() {
+        include "database/config.php";
+        include "users_functions.php";
+        $username = $_SESSION['user'];
+        if($username == 'iRequest') {
+        ?>
+            <b class="hidden-xs">Administrator</b>
+        <?php
+        }else{
+            $firstname = getUserDetailsByUsername($conn, $username)[0];
+        ?>
+            <b class="hidden-xs"><?php echo $firstname ?></b>
+        <?php
+        }                       
+    }
+}
+
 if(!function_exists('get_headBlade')){
     function get_headBlade(){
         ?>

@@ -33,7 +33,10 @@ $get_id=$_GET['id'];
                     <li>
                         <a class="profile-pic" href="#">
                         <img src="resources/images/avatar.jpg" alt="avatar" width="36" class="img-circle">                        
-                        <b class="hidden-xs">Steave</b> </a>
+                        <?php
+                            getHeaderUserName();
+                        ?>
+                        </a>
                     </li>
                 </ul>
             </div>

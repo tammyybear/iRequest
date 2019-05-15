@@ -30,7 +30,10 @@ include "controllers/include_partial_functions.php";
                     <li>
                         <a class="profile-pic" href="edit_user.php">
                         <img src="resources/images/avatar.jpg" alt="avatar" width="36" class="img-circle">                        
-                        <b class="hidden-xs">Steave</b> </a>
+                        <?php
+                            getHeaderUserName();
+                        ?>
+                        </a>
                     </li>
                 </ul>
             </div>
