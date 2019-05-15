@@ -12,18 +12,22 @@ if(countResult($conn, "SELECT * from admin_tb where admin_username = '$username'
     $_SESSION['user'] = $username;
     $_SESSION['role_type'] = "Admin";
     redirectPagewithAlert("dashboard_admin.php", "Welcome Admin");
-}elseif(countResult($conn, "SELECT * from users_tb where username = '$username' and password = '$password'") == 1){
-    $_SESSION['user'] = $username;
-    $role_type = getUserDetailsByUsername($conn, $username)[9];
-    if($role_type = "Department Head"){
-        $_SESSION['role_type'] = $role_type;
-        redirectPagewithAlert("dashboard_department_head.php", "Welcome Department Head");
+}elseif(countResult($conn, "SELECT * from users_tb where username = '$username' and password = '$password'") == 1) {
+    $user_status = getUserDetailsByUsername($conn, $username)[10];
+    if($user_status == "Active"){
+        $_SESSION['user'] = $username;
+        $role_type = getUserDetailsByUsername($conn, $username)[9];
+        if($role_type = "Department Head"){
+            $_SESSION['role_type'] = $role_type;
+            redirectPagewithAlert("dashboard_department_head.php", "Welcome Department Head");
+        }else{
+            $_SESSION['role_type'] = "Department Member";
+            redirectPagewithAlert("dashboard_department_member.php", "Welcome Department Member");
+        }
     }else{
-        $_SESSION['role_type'] = "Department Member";
-        redirectPagewithAlert("dashboard_department_member.php", "Welcome Department Member");
+        redirectPagewithAlert("index.php", "User account not active, please see Admin / Dept. Head");
     }
 }else{
     redirectPagewithAlert("index.php", "Invalid Username/Password");
 }
-
 ?>
