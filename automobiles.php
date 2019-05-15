@@ -61,7 +61,7 @@ include "database/config.php";
                 <div class="row">
                     <div class="col-md-8 col-xs-12">
                         <div class="white-box">
-                            <form class="form-horizontal form-material" method="post" action="add_automobile_action.php">
+                            <form class="form-horizontal form-material" method="post" action="add_automobiles_action.php">
                                 <div class="form-group">
                                     <label class="col-md-12">Automobile Name</label>
                                     <div class="col-md-12">
@@ -70,7 +70,7 @@ include "database/config.php";
                                 <div class="form-group">
                                     <label for="example-email" class="col-md-12">Automobile Plate No.</label>
                                     <div class="col-md-12">
-                                        <input type="text" placeholder="Automobile Plate No." class="form-control form-control-line" name="facility_description" required> </div>
+                                        <input type="text" placeholder="Automobile Plate No." class="form-control form-control-line" name="automobile_plate" required> </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-12">

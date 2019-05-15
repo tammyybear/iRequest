@@ -96,7 +96,7 @@ if(!function_exists('get_NavBlade')){
                                 <a href="facilities.php" class="waves-effect"><i class="fa fa-building fa-fw" aria-hidden="true"></i><span class="hide-menu">Facilities</span></a>
                             </li>
                             <li>
-                                <a href="auotmobiles.php" class="waves-effect"><i class="fa fa-car fa-fw" aria-hidden="true"></i><span class="hide-menu">Automobiles</span></a>
+                                <a href="automobiles.php" class="waves-effect"><i class="fa fa-car fa-fw" aria-hidden="true"></i><span class="hide-menu">Automobiles</span></a>
                             </li>
                             <li>
                                 <a href="department.php" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i><span class="hide-menu">Departments</span></a>

@@ -28,8 +28,8 @@ if(!function_exists('getAutomobileData')){
                 <tr>
                    <td class="txt-oflo"><?php echo $row['item_name'] ?></td>
                    <td class="txt-oflo"><?php echo $row['item_description'] ?></td>
-                   <td class="txt-oflo"><a href="edit_facilities.php<?php echo '?id='.$row['inventory_item_id']; ?>">Edit</a></td>
-                   <td class="txt-oflo"><a href="delete_facilities.php<?php echo '?id='.$row['inventory_item_id']; ?>">Delete</a></td>
+                   <td class="txt-oflo"><a href="edit_automobiles.php<?php echo '?id='.$row['inventory_item_id']; ?>">Edit</a></td>
+                   <td class="txt-oflo"><a href="delete_automobiles.php<?php echo '?id='.$row['inventory_item_id']; ?>">Delete</a></td>
                </tr>
                <?php
             }
