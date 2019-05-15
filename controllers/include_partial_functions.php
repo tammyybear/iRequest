@@ -13,14 +13,24 @@ if(!function_exists('getHeaderUserName')) {
         include "database/config.php";
         include "users_functions.php";
         $username = $_SESSION['user'];
-        if($username == 'iRequest') {
         ?>
-            <b class="hidden-xs">Administrator</b>
+        <ul class="nav navbar-top-links navbar-right pull-right">
+            <li>
+                <a class="profile-pic" href="edit_user.php">
+                <a class="profile-pic" href="edit_user.php<?php echo '?id='.getUserDetailsByUsername($conn, $username)[11] ?>">
+                    <img src="resources/images/avatar.jpg" alt="avatar" width="36" class="img-circle">
         <?php
+        if($username == 'iRequest') {
+        ?>                          
+                            <b class="hidden-xs">Administrator</b>
+                        <?php
         }else{
             $firstname = getUserDetailsByUsername($conn, $username)[0];
-        ?>
-            <b class="hidden-xs"><?php echo $firstname ?></b>
+        ?>                                             
+                            <b class="hidden-xs"><?php echo $firstname ?></b>
+                </a>
+            </li>
+        </ul>
         <?php
         }                       
     }

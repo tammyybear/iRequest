@@ -4,7 +4,7 @@ if(!function_exists('getUserDetailsByUsername')){
         $users_details = array();
         $query = mysqli_query($conn, "SELECT * from users_tb where username = '$username'");
         while($row = mysqli_fetch_array($query)){
-            array_push($users_details, $row['first_name'], $row['middle_name'], $row['last_name'], $row['name_extension'], $row['mobile_number'], $row['address'], $row['username'], $row['password'], $row['department_id'], $row['role_type'], $row['user_status']);
+            array_push($users_details, $row['first_name'], $row['middle_name'], $row['last_name'], $row['name_extension'], $row['mobile_number'], $row['address'], $row['username'], $row['password'], $row['department_id'], $row['role_type'], $row['user_status'], $row['user_id']);
         }
         
         return $users_details;
