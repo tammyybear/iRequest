@@ -1,5 +1,4 @@
 <?php
-require "controllers/sessions_functions.php";
 include "controllers/include_partial_functions.php";
 ?>
 <!DOCTYPE html>

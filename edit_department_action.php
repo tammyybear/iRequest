@@ -1,5 +1,4 @@
-<?php   
-require "controllers/sessions_functions.php"; 
+<?php
 include "controllers/database_functions.php";
 include "controllers/basic_functions.php";
 include "database/config.php";

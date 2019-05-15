@@ -1,5 +1,4 @@
 <?php
-require "controllers/sessions_functions.php";
 include "controllers/database_functions.php";
 include "controllers/basic_functions.php";
 include "database/config.php";
@@ -25,7 +24,6 @@ if($role_type == "Department Head"){
 if(updateDatabase($conn, "INSERT into users_tb(first_name, middle_name, last_name, name_extension, mobile_number, address, username, password, department_id, role_type, user_status) VALUES ('$first_name', '$middle_name', '$last_name', '$name_extension', '$mobile_number', '$address', '$username', '$password', '$department_id', '$role_type', '$status')") == 1){
     redirectPageWithAlert("user_management.php", "User Successfully Added");
 }else{
-    //echo updateDatabase($conn, "INSERT into users_tb(first_name, middle_name, last_name, name_extension, mobile_number, address, username, password, department_id, role_type, user_status) VALUES ('$first_name', '$middle_name', '$last_name', '$name_extension', '$mobile_number', '$address', '$username', '$password', '$department_id', '$role_type', '$status')");
     redirectPageWithAlert("add_user.php", "Error. Please Try Again");
 }
 ?>
