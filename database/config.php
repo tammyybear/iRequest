@@ -11,9 +11,4 @@ $conn = mysqli_connect($servername, $dbusername, $dbpassword, $dbname);
 if (!$conn) {
    die("connection failed: ".mysqli_connect_error());
 }
-
-if(!isset($_SESSION['role_type'])) {
-    redirectPageWithAlert("index.php", "Please login to continue");
-}
-
 ?>
