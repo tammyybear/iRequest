@@ -17,11 +17,11 @@ if(countResult($conn, "SELECT * from admin_tb where admin_username = '$username'
     if($user_status == "Active"){
         $_SESSION['user'] = $username;
         $role_type = getUserDetailsByUsername($conn, $username)[9];
-        if($role_type = "Department Head"){
+        if($role_type == "Department Head"){
             $_SESSION['role_type'] = $role_type;
             redirectPagewithAlert("dashboard_department_head.php", "Welcome Department Head");
         }else{
-            $_SESSION['role_type'] = "Department Member";
+            $_SESSION['role_type'] = $role_type;
             redirectPagewithAlert("dashboard_department_member.php", "Welcome Department Member");
         }
     }else{
