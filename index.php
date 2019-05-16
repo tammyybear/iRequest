@@ -1,5 +1,6 @@
 <?php
 include "controllers/include_partial_functions.php";
+include "controllers/check_logout.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">

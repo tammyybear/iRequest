@@ -61,12 +61,12 @@ include "database/config.php";
                         <div class="white-box">
                             <form class="form-horizontal form-material" method="post" action="add_department_action.php">
                                 <div class="form-group">
-                                    <label class="col-md-12">Department Name</label>
+                                    <label class="col-md-12">Department / College Name</label>
                                     <div class="col-md-12">
                                         <input type="text" placeholder="Department Name" name="department_name" class="form-control form-control-line" required> </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="example-email" class="col-md-12">Department Description</label>
+                                    <label for="example-email" class="col-md-12">Department / College Description</label>
                                     <div class="col-md-12">
                                         <input type="text" placeholder="Department Description" class="form-control form-control-line" name="department_description" id="example-email" required> </div>
                                 </div>
