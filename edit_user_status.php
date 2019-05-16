@@ -1,8 +1,10 @@
 <?php
+session_start();
 include "controllers/database_functions.php";
 include "controllers/basic_functions.php";
 include "controllers/users_functions.php";
 include "database/config.php";
+include "controllers/check_login.php";
 
 $get_id=$_GET['id'];
 

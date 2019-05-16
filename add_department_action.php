@@ -1,8 +1,9 @@
 <?php
-
+session_start();
 include "controllers/database_functions.php";
 include "controllers/basic_functions.php";
 include "database/config.php";
+include "controller/check_login.php";
 
 $department_name = $_POST['department_name'];
 $department_description = $_POST['department_description'];

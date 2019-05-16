@@ -1,7 +1,9 @@
 <?php
+session_start();
 include "controllers/database_functions.php";
 include "controllers/basic_functions.php";
 include "database/config.php";
+include "controllers/check_login.php";
 
 $get_id=$_GET['id'];
 $facility_name = $_POST['facility_name'];

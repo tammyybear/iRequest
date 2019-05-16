@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if(!function_exists('get_FooterBlade')){
     function get_FooterBlade(){
         ?>

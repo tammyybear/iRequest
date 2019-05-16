@@ -59,7 +59,7 @@ include "controllers/check_logout.php";
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-12">
-                                        <button class="btn btn-success">Login</button>
+                                        <button class="btn btn-success" name="Login">Login</button>
                                     </div>
                                 </div>
                             </form>

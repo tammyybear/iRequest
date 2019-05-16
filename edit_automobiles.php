@@ -2,6 +2,7 @@
 include "controllers/include_partial_functions.php";
 include "controllers/inventory_functions.php";
 include "database/config.php";
+include "controllers/check_login.php";
 $get_id=$_GET['id'];
 ?>
 <!DOCTYPE html>

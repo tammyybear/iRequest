@@ -1,5 +1,4 @@
 <?php
-session_start();
 if(isset($_SESSION['user']) && isset($_SESSION['role_type'])){
     if($_SESSION['role_type'] == "Admin"){
         header("LOCATION: dashboard_admin.php");

@@ -2,6 +2,7 @@
 include "controllers/include_partial_functions.php";
 include "controllers/inventory_functions.php";
 include "database/config.php";
+include "controller/check_login.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
