@@ -26,7 +26,12 @@ if(!function_exists('getUserDetailsById')){
 if(!function_exists('getUsersData')){
     function getUsersData($conn){
         include "department_functions.php";
-        $query = mysqli_query($conn, "SELECT * from users_tb ORDER BY department_id");
+        if($_SESSION['role_type'] == "Admin"){
+            $query = mysqli_query($conn, "SELECT * from users_tb ORDER BY department_id");
+        }else{
+            $departmentid = getUserDetailsByUsername($conn, $_SESSION['user'])[8];
+            $query = mysqli_query($conn, "SELECT * from users_tb where department_id = '$departmentid' ORDER BY user_id");
+        }        
         if(! $query){
             echo mysqli_error($conn);
         }else{

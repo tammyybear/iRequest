@@ -3,7 +3,7 @@ session_start();
 include "controllers/database_functions.php";
 include "controllers/basic_functions.php";
 include "database/config.php";
-include "controller/check_login.php";
+include "controllers/check_login.php";
 
 $facility_name = $_POST['facility_name'];
 $facility_description = $_POST['facility_description'];
