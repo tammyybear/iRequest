@@ -29,7 +29,7 @@ include "database/config.php";
                     </a>
                 </div>                     
                 <?php
-                    getHeaderUserName();
+                    // getHeaderUserName();
                 ?>
             </div>
             <!-- /.navbar-header -->
