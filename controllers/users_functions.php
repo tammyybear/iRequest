@@ -117,6 +117,58 @@ if(!function_exists('getAddUserForm')){
     }
 }
 
+if(!function_exists('getEditUserForm')){
+    function getEditUserForm($conn){
+        ?>
+            <div class="row">
+                <div class="col-md-8 col-xs-12">
+                    <div class="white-box">
+                    <?php
+                        if($_SESSION['role_type'] == "Admin"){
+                    ?>
+                        <form class="form-horizontal form-material" method="post" action="edit_user_action.php">
+                    <?php
+                        }else{
+                        $get_id = $_GET['id'];
+                    ?>
+                        <form class="form-horizontal form-material" method="post" action="edit_user_action.php<?php echo '?id='.$get_id; ?>">
+                    <?php
+                        }
+                    ?>
+                            <div class="form-group">
+                                <label class="col-md-12"></label>
+                            </div>                            
+                            <div class="form-group">
+                                <label class="col-md-12">Old Password</label>
+                                <div class="col-md-12">
+                                    <input type="password" placeholder="Old Password" name="old_password" class="form-control form-control-line"required>
+                                </div>
+                            </div>                            
+                            <div class="form-group">
+                                <label class="col-md-12">New Password </label>
+                                <div class="col-md-12">
+                                    <input type="password" placeholder="New Password" name="new_password" class="form-control form-control-line" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">Re-type New Password</label>
+                                <div class="col-md-12">
+                                    <input type="password" placeholder="Re-type New Password" name="retype_new_password" class="form-control form-control-line"required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <button class="btn btn-success" name="Update_Account">Update Account</button>
+                                </div>
+                            </div>
+                        </form>                                        
+                    </div>
+                </div>
+            </div>
+        <?php
+    }
+}
+
 if(!function_exists('getRoleTypes')){
     function getRoleTypes(){
         ?>

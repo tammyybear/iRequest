@@ -16,7 +16,7 @@ if(!function_exists('getHeaderUserName')) {
         $username = $_SESSION['user'];
         if($username == 'iRequest') {
         ?>
-            <a class="profile-pic" href="edit_user_admin.php">
+            <a class="profile-pic" href="edit_user.php">
                 <img src="resources/images/avatar.jpg" alt="avatar" width="36" class="img-circle">
                 <b class="hidden-xs">Administrator</b>
             </a>
@@ -24,7 +24,7 @@ if(!function_exists('getHeaderUserName')) {
         }else{
             $firstname = getUserDetailsByUsername($conn, $username)[0];
         ?>
-            <a class="profile-pic" href="edit_user.php<?php echo '?id'.getUserDetailsByUsername($conn, $username)[11] ?>">
+            <a class="profile-pic" href="edit_user.php<?php echo '?id='.getUserDetailsByUsername($conn, $username)[11]; ?>">
                 <img src="resources/images/avatar.jpg" alt="avatar" width="36" class="img-circle">
                 <b class="hidden-xs"><?php echo $firstname ?></b>
             </a>
