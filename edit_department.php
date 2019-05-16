@@ -31,12 +31,7 @@ $get_id=$_GET['id'];
                 </div>
                 <ul class="nav navbar-top-links navbar-right pull-right">
                     <li>
-                        <a class="profile-pic" href="edit_user.php">
-                        <img src="resources/images/avatar.jpg" alt="avatar" width="36" class="img-circle">                        
-                        <?php
-                            getHeaderUserName();
-                        ?>
-                        </a>
+                        <?php getHeaderUserName(); ?>                        
                     </li>
                 </ul>
             </div>

@@ -27,10 +27,15 @@ include "database/config.php";
                         <b><img src="resources/images/logo.png"/></b>
                         <small class="hidden-xs"><b>request</b></small>
                     </a>
-                </div>                     
-                <?php
-                    // getHeaderUserName();
-                ?>
+                </div>
+                <ul class="nav navbar-top-links navbar-right pull-right">
+                    <li>
+                        <a class="profile-pic">
+                            <img src="resources/images/avatar.jpg" alt="avatar" width="36" class="img-circle">
+                            <?php getHeaderUserName(); ?>
+                        </a>
+                    </li>
+                </ul>
             </div>
             <!-- /.navbar-header -->
             <!-- /.navbar-top-links -->
