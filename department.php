@@ -88,8 +88,8 @@ include "controllers/check_login.php";
                                 <table class="table ">
                                     <thead>
                                         <tr>
-                                            <th>Department Name</th>
-                                            <th>Department Description</th>
+                                            <th>Department / College Name</th>
+                                            <th>Department / College Description</th>
                                             <th>Number of Members</th>
                                             <th>Update</th>
                                             <th>Delete</th>
