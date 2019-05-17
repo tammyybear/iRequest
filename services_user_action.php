@@ -13,8 +13,16 @@ $request_description = $_POST['request_description'];
 $ticketId = get_TicketId($conn);
 
 if(updateDatabase($conn, "INSERT into services_tb (users_id, request_subject, request_description, request_status, ticket_id) VALUES ('$users_id', '$request_subject', '$request_description', 'Open', '$ticketId')") == 1){
-    redirectPageWithAlert("services_user.php", "Request Successfully Added. Here is your Ticket ID: $ticketId");
+    if($_SESSION['role_type'] == "Admin"){
+        redirectPageWithAlert("services_admin.php", "Request Successfully Added. Here is your Ticket ID: $ticketId");
+    }else{
+        redirectPageWithAlert("services_user.php", "Request Successfully Added. Here is your Ticket ID: $ticketId");
+    }    
 }else{
-    redirectPageWithAlert("services_user.php", "Error. Please Try Again");
+    if($_SESSION['role_type'] == "Admin"){
+        redirectPageWithAlert("services_admin.php", "Error. Please Try Again");
+    }else{
+        redirectPageWithAlert("services_user.php", "Error. Please Try Again");
+    }    
 }
 ?>

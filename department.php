@@ -85,7 +85,7 @@ include "controllers/check_login.php";
                         <div class="white-box">
                             <h3 class="box-title">
                             <div class="table-responsive">
-                                <table class="table ">
+                                <table class="table">
                                     <thead>
                                         <tr>
                                             <th>Department / College Name</th>
