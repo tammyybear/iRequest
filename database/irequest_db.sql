@@ -248,7 +248,7 @@ ALTER TABLE `inventory_items_tb`
 -- Constraints for table `services_tb`
 --
 ALTER TABLE `services_tb`
-  ADD CONSTRAINT `services_tb_uifk_1` FOREIGN KEY (`users_id`) REFERENCES `users_tb` (`user_id`);
+  ADD CONSTRAINT `services_tb_ibfk_1` FOREIGN KEY (`users_id`) REFERENCES `users_tb` (`user_id`);
 
 --
 -- Constraints for table `users_tb`
