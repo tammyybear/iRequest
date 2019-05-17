@@ -23,7 +23,7 @@ if(isset($_POST['Login'])){
                 redirectPagewithAlert("dashboard_department_head.php", "Welcome Department Head");
             }else{
                 $_SESSION['role_type'] = $role_type;
-                redirectPagewithAlert("dashboard_department_member.php", "Welcome Department Member");
+                redirectPagewithAlert("mobile_app/dashboard_department_member.php", "Welcome Department Member");
             }
         }else{
             redirectPagewithAlert("index.php", "User account not active, please see Admin / Dept. Head");

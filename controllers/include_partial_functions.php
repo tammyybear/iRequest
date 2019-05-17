@@ -33,6 +33,20 @@ if(!function_exists('getHeaderUserName')) {
     }
 }
 
+if(!function_exists('getHeaderUserName_mobile')) {
+    function getHeaderUserName_mobile() {
+        include "../database/config.php";
+        include "users_functions.php";
+        $username = $_SESSION['user'];
+        ?>
+            <a class="profile-pic" href="edit_user.php<?php echo '?id='.getUserDetailsByUsername($conn, $username)[11]; ?>">
+                <img src="../resources/images/avatar.jpg" alt="avatar" width="36" class="img-circle">
+                <b class="hidden-xs"><?php echo $firstname ?></b>
+            </a>
+        <?php                     
+    }
+}
+
 if(!function_exists('get_headBlade')){
     function get_headBlade(){
         ?>

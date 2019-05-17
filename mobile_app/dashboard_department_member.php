@@ -1,12 +1,12 @@
 <?php
-include "controllers/include_partial_functions.php";
-include "controllers/check_login.php";
+include "../controllers/include_partial_functions.php";
+include "../controllers/check_login.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-   <?php get_headBlade(); ?>
+   <?php get_headBlade_mobile(); ?>
 </head>
 
 <body>
@@ -23,13 +23,13 @@ include "controllers/check_login.php";
                 </a>
                 <div class="top-left-part">
                     <a class="logo" alt="logo">
-                        <b><img src="resources/images/logo.png"/></b>
+                        <b><img src="../resources/images/logo.png"/></b>
                         <small class="hidden-xs"><b>request</b></small>
                     </a>
                 </div>
                 <ul class="nav navbar-top-links navbar-right pull-right">
                     <li>                    
-                        <?php getHeaderUserName(); ?>
+                        <?php getHeaderUserName_mobile(); ?>
                     </li>
                 </ul>
             </div>
@@ -59,13 +59,12 @@ include "controllers/check_login.php";
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->
-            <?php get_FooterBlade(); ?>
         </div>
         <!-- /#page-wrapper -->
     </div>
     <!-- /#wrapper -->
   <?php 
-    get_JSBlade();
+    get_JSBlade_mobile();
   ?>
 </body>
 
