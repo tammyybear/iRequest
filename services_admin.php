@@ -74,9 +74,9 @@ include "controllers/check_login.php";
                             </a>
                         </div>
                     </div>                    
-                    <a>
-                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                            <div class="white-box">
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="white-box">
+                            <a data-target="#myModal" data-toggle="modal" href="#myModal">
                                 <div class="col-in row">
                                     <div class="col-md-6 col-sm-6 col-xs-6"> <i class="linea-icon linea-basic" data-icon="&#xe01b;"></i>
                                         <h5 class="text-muted vb">TO DO LIST</h5> </div>
@@ -88,12 +88,12 @@ include "controllers/check_login.php";
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-                    </a>
-                    <a>
-                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                            <div class="white-box">
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="white-box">
+                            <a>
                                 <div class="col-in row">
                                     <div class="col-md-6 col-sm-6 col-xs-6"> <i class="linea-icon linea-basic" data-icon="&#xe00b;"></i>
                                         <h5 class="text-muted vb">SERVICES LIST</h5> </div>
@@ -105,9 +105,9 @@ include "controllers/check_login.php";
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </div>
             <!-- /.container-fluid -->
