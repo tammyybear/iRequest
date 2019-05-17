@@ -48,8 +48,6 @@ include "../controllers/include_partial_functions.php";
                 </div>
                 <!-- /.row -->
             </div>
-            <!-- /.container-fluid -->
-            <?php get_FooterBlade(); ?>
         </div>
         <!-- /#page-wrapper -->
     </div>
