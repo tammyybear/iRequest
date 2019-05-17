@@ -12,7 +12,7 @@ if(isset($_POST['Login'])){
     if(countResult($conn, "SELECT * from admin_tb where admin_username = '$username' and admin_password = '$password'") == 1){
         $_SESSION['user'] = $username;
         $_SESSION['role_type'] = "Admin";
-        redirectPagewithAlert("dashboard_admin.php", "Welcome Admin");
+        redirectPagewithAlert("mobile_app/index.php", "Welcome Admin");
     }elseif(countResult($conn, "SELECT * from users_tb where username = '$username' and password = '$password'") == 1) {
         $user_status = getUserDetailsByUsername($conn, $username)[10];
         if($user_status == "Active"){
