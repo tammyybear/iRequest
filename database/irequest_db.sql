@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2019 at 10:57 AM
+-- Generation Time: May 17, 2019 at 06:19 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -83,8 +83,7 @@ CREATE TABLE `inventory_category_tb` (
 
 INSERT INTO `inventory_category_tb` (`inventory_cat_id`, `category`) VALUES
 (1, 'Facilities'),
-(2, 'Automobiles'),
-(3, 'Services');
+(2, 'Automobiles');
 
 -- --------------------------------------------------------
 
@@ -97,6 +96,23 @@ CREATE TABLE `inventory_items_tb` (
   `item_name` varchar(500) NOT NULL,
   `item_description` varchar(1000) NOT NULL,
   `inventory_cat_id` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `services_tb`
+--
+
+CREATE TABLE `services_tb` (
+  `services_id` int(10) NOT NULL,
+  `users_id` int(10) NOT NULL,
+  `subject` varchar(300) NOT NULL,
+  `description` varchar(300) NOT NULL,
+  `date_created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_started` datetime NOT NULL,
+  `date_closed` datetime NOT NULL,
+  `ticket_id` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -158,6 +174,14 @@ ALTER TABLE `inventory_items_tb`
   ADD KEY `inventory_cat_id` (`inventory_cat_id`);
 
 --
+-- Indexes for table `services_tb`
+--
+ALTER TABLE `services_tb`
+  ADD PRIMARY KEY (`services_id`),
+  ADD UNIQUE KEY `ticket_id` (`ticket_id`),
+  ADD KEY `services_tb_uifk_1` (`users_id`);
+
+--
 -- Indexes for table `users_tb`
 --
 ALTER TABLE `users_tb`
@@ -184,13 +208,19 @@ ALTER TABLE `department_tb`
 -- AUTO_INCREMENT for table `inventory_category_tb`
 --
 ALTER TABLE `inventory_category_tb`
-  MODIFY `inventory_cat_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `inventory_cat_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `inventory_items_tb`
 --
 ALTER TABLE `inventory_items_tb`
   MODIFY `inventory_item_id` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `services_tb`
+--
+ALTER TABLE `services_tb`
+  MODIFY `services_id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users_tb`
@@ -213,6 +243,12 @@ ALTER TABLE `bookings_tb`
 --
 ALTER TABLE `inventory_items_tb`
   ADD CONSTRAINT `inventory_items_tb_ibfk_1` FOREIGN KEY (`inventory_cat_id`) REFERENCES `inventory_category_tb` (`inventory_cat_id`);
+
+--
+-- Constraints for table `services_tb`
+--
+ALTER TABLE `services_tb`
+  ADD CONSTRAINT `services_tb_uifk_1` FOREIGN KEY (`users_id`) REFERENCES `users_tb` (`user_id`);
 
 --
 -- Constraints for table `users_tb`

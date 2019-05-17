@@ -115,7 +115,7 @@ if(!function_exists('get_NavBlade')){
                                 <a href="schedules.php" class="waves-effect"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i><span class="hide-menu">Schedules</span></a>
                             </li>
                             <li>
-                                <a href="services.php" class="waves-effect"><i class="fa fa-tasks fa-fw" aria-hidden="true"></i><span class="hide-menu">Services</span></a>
+                                <a href="services_admin.php" class="waves-effect"><i class="fa fa-tasks fa-fw" aria-hidden="true"></i><span class="hide-menu">Services</span></a>
                             </li>
                             <li>
                                 <a href="facilities.php" class="waves-effect"><i class="fa fa-building fa-fw" aria-hidden="true"></i><span class="hide-menu">Facilities</span></a>
@@ -148,7 +148,7 @@ if(!function_exists('get_NavBlade')){
                                 <a href="schedules.php" class="waves-effect"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i><span class="hide-menu">Schedules</span></a>
                             </li>
                             <li>
-                                <a href="services.php" class="waves-effect"><i class="fa fa-tasks fa-fw" aria-hidden="true"></i><span class="hide-menu">Services</span></a>
+                                <a href="services_user.php" class="waves-effect"><i class="fa fa-tasks fa-fw" aria-hidden="true"></i><span class="hide-menu">Services</span></a>
                             </li>
                             <li>
                                 <a href="user_management.php" class="waves-effect"><i class="fa fa-users fa-fw" aria-hidden="true"></i><span class="hide-menu">User Management</span></a>
@@ -169,10 +169,10 @@ if(!function_exists('get_NavBlade')){
                                 <a href="dashboard_department_member.php" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
                             </li>
                             <li>
-                                <a href="index.php" class="waves-effect"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i><span class="hide-menu">Schedules</span></a>
+                                <a href="schedules.php" class="waves-effect"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i><span class="hide-menu">Schedules</span></a>
                             </li>
                             <li>
-                                <a href="index.php" class="waves-effect"><i class="fa fa-tasks fa-fw" aria-hidden="true"></i><span class="hide-menu">Services</span></a>
+                                <a href="services_user.php" class="waves-effect"><i class="fa fa-tasks fa-fw" aria-hidden="true"></i><span class="hide-menu">Services</span></a>
                             </li>
                             <li>
                                 <a href="logout_action.php" class="waves-effect"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i><span class="hide-menu">Logout</span></a>
