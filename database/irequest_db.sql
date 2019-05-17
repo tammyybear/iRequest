@@ -112,7 +112,7 @@ CREATE TABLE `services_tb` (
   `date_created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `date_started` datetime NOT NULL,
   `date_closed` datetime NOT NULL,
-  `ticket_id` varchar(10) NOT NULL
+  `ticket_id` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
