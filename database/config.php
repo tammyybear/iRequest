@@ -1,6 +1,4 @@
 <?php
-include "controllers/basic_functions.php";
-
 $servername = "remotemysql.com:3306";
 $dbusername = "M5vKHHE91E";
 $dbpassword = "6pNhpSeMsR";

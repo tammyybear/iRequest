@@ -6,6 +6,11 @@ include "../controllers/include_partial_functions.php";
 
 <head>
 <?php get_headBlade_mobile(); ?>
+<style>
+		html{
+			background: #EDF1F5;
+		}
+</style>
 </head>
 
 <body>
@@ -15,7 +20,7 @@ include "../controllers/include_partial_functions.php";
     </div>
     <div id="wrapper">
         <!-- Page Content -->
-        <div id="page-wrapper">
+        <div id="page-wrapper"  style = "background-color: #EDF1F5;">
             <div class="container-fluid">
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
@@ -26,7 +31,7 @@ include "../controllers/include_partial_functions.php";
                 <div class="row">
                     <div class="col-md-8 col-xs-12">
                         <div class="white-box">
-                            <form class="form-horizontal form-material" method="post" action="login_action.php">
+                            <form class="form-horizontal form-material" method="post" action="../login_action.php">
                                 <div class="form-group">
                                     <label class="col-md-12">Username</label>
                                     <div class="col-md-12">
