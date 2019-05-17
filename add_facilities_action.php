@@ -12,7 +12,7 @@ if(countResult($conn, "SELECT * from inventory_items_tb where item_name = '$faci
     redirectPageWithAlert("facilities.php", "Error. Please Try Again");
 }else{
     if(updateDatabase($conn, "INSERT into inventory_items_tb(item_name, item_description, inventory_cat_id) VALUES ('$facility_name', '$facility_description','1')") == 1){
-        redirectPageWithAlert("facilities.php", "User Successfully Added");
+        redirectPageWithAlert("facilities.php", "Facility Successfully Added");
     }else{
         redirectPageWithAlert("facilities.php", "Error. Please Try Again");
     }
