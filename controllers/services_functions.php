@@ -45,7 +45,7 @@ if(!function_exists('getServiceData')){
                 ?>
                 <tr>
                    <td class="txt-oflo"><?php echo $row['request_subject'] ?></td>
-                   <td class="txt-oflo"><?php echo $row['request_description'] ?></td>
+                   <td class="txt-oflo"><?php echo getUserDetailsById($conn, GetTopRequestData($conn)[0])[0] ?></td>
                    <td class="txt-oflo"><?php echo $row['date_created']?> </td>
                </tr>
                <?php
