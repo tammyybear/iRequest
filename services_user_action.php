@@ -7,7 +7,12 @@ include "controllers/services_functions.php";
 include "controllers/users_functions.php";
 include "controllers/check_login.php";
 
-$users_id = getUserDetailsByUsername($conn, $_SESSION['user'])[11];
+if($_SESSION['role_type'] == "Admin"){
+    $users_id = 0;
+}else{
+    $users_id = getUserDetailsByUsername($conn, $_SESSION['user'])[11];
+}
+
 $request_subject = $_POST['request_subject'];
 $request_description = $_POST['request_description'];
 $ticketId = get_TicketId($conn);

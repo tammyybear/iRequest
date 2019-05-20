@@ -59,33 +59,8 @@ include "controllers/check_login.php";
                 </div>
                 <div class="row">
                     <div class="col-md-8 col-xs-12">
-                        <div class="white-box">
-                            <h3 class="box-title">TICKET ID: <?php echo GetTopRequestData($conn)[5] ?></h3>
-                            <form class="form-horizontal form-material" method="post" action="services_admin_action.php<?php echo '?id='.GetTopRequestData($conn)[6] ?>">                            
-                                <div class="form-group">
-                                    <label class="col-md-12">Service Request Subject</label>
-                                    <div class="col-md-12">                                   
-                                        <input type="text" value="<?php echo GetTopRequestData($conn)[1] ?>" class="form-control form-control-line" name="request_subject" readonly>                                        
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-md-12">Service Request Description</label>
-                                    <div class="col-md-12">                                                              
-                                        <textarea class="form-control form-control-line" name="request_description" readonly><?php echo GetTopRequestData($conn)[2] ?></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-md-12">Requestor</label>
-                                    <div class="col-md-12">                                        
-                                        <input type="text" value="<?php echo getUserDetailsById($conn, GetTopRequestData($conn)[0])[0] ?>" class="form-control form-control-line" name="requestor_name">
-                                    </div>
-                                </div> 
-                                <div class="form-group">
-                                    <div class="col-sm-12">
-                                        <button class="btn btn-success">Close Ticket</button>
-                                    </div>
-                                </div>
-                            </form>
+                        <div class="white-box">                            
+                            <?php CheckCountService($conn); ?>                            
                         </div>
                     </div>
                 </div>

@@ -14,10 +14,17 @@ if(!function_exists('getUserDetailsByUsername')){
 if(!function_exists('getUserDetailsById')){
     function getUserDetailsById($conn, $id){
         $users_details = array();
-        $query = mysqli_query($conn, "SELECT * from users_tb where user_id = '$id'");
-        while($row = mysqli_fetch_array($query)){
-            array_push($users_details, $row['first_name'], $row['middle_name'], $row['last_name'], $row['name_extension'], $row['mobile_number'], $row['address'], $row['username'], $row['password'], $row['department_id'], $row['role_type'], $row['user_status']);
-        }
+        if(countResult($conn, "SELECT * from admin_tb where admin_id = '$id'") == 1){
+            $query = mysqli_query($conn, "SELECT * from admin_tb where admin_id = '$id'");
+            while($row = mysqli_fetch_array($query)){
+                array_push($users_details, $row['admin_username'], $row['admin_password'],$row['admin_id'], );
+            }
+        }else{
+            $query = mysqli_query($conn, "SELECT * from users_tb where user_id = '$id'");
+            while($row = mysqli_fetch_array($query)){
+                array_push($users_details, $row['first_name'], $row['middle_name'], $row['last_name'], $row['name_extension'], $row['mobile_number'], $row['address'], $row['username'], $row['password'], $row['department_id'], $row['role_type'], $row['user_status']);
+            }
+        }                
         
         return $users_details;
     }
