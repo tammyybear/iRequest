@@ -103,18 +103,37 @@ if(!function_exists('getAddUserForm')){
                                     <input type="text" placeholder="Address" name="address" class="form-control form-control-line" required>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-md-12">Department</label>
-                                <div class="col-md-12">
-                                    <?php getDepartmentDropDown($conn); ?>
+                            <?php if($_SESSION['role_type'] == "Admin"){ ?>
+                                <div class="form-group">
+                                    <label class="col-md-12">Department</label>
+                                    <div class="col-md-12">
+                                        <?php getDepartmentDropDown($conn); ?>
+                                    </div>
                                 </div>
-                            </div>                            
-                            <div class="form-group">
-                                <label class="col-md-12">Role Type</label>
-                                <div class="col-md-12">
-                                    <?php getRoleTypes(); ?> 
-                                </div>    
-                            </div>
+                            <?php }else{ ?>
+                                <div class="form-group">
+                                    <label class="col-md-12">Department</label>
+                                    <div class="col-md-12">
+                                        <?php getDepartmentDropDownByUsername($conn, $_SESSION['user']); ?>
+                                    </div>
+                                </div>
+                            <?php } ?>                            
+                            <?php if($_SESSION['role_type'] == "Admin"){ ?>
+                                <div class="form-group">
+                                    <label class="col-md-12">Role Type</label>
+                                    <div class="col-md-12">
+                                        <?php getRoleTypes(); ?> 
+                                    </div>    
+                                </div>
+                            <?php }else{ ?>
+                                <div class="form-group">
+                                    <label class="col-md-12">Role Type</label>
+                                    <div class="col-md-12">
+                                        <option value = "Department Member">Department Member</option>
+                                    </div>    
+                                </div>
+                            <?php } ?>
+                            
                             <div class="form-group">
                                 <div class="col-sm-12">
                                     <button class="btn btn-success">Add User</button>

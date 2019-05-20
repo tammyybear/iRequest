@@ -51,6 +51,25 @@ if(!function_exists('getDepartmentDropDown')){
     }
 }
 
+if(!function_exists('getDepartmentDropDownByUsername')){
+    function getDepartmentDropDownByUsername($conn, $username){
+        ?>
+        <select name = "department_id" class="form-control form-control-line" required>
+            <?php
+                include "users_functions.php";
+                $department_id = getUserDetailsByUsername($conn, $username)[8];
+                $query = mysqli_query($conn, "SELECT * from department_tb where department_id = '$department_id'");
+                while($row = mysqli_fetch_array($query)){
+                    ?>
+                    <option value = "<?php echo $row['department_id'] ?>"><?php echo $row['department_name'] ?></option>
+                    <?php
+                }
+            ?>
+        </select>
+        <?php
+    }
+}
+
 
 
 ?>
