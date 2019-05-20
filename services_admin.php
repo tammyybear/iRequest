@@ -82,6 +82,7 @@ include "controllers/check_login.php";
                                             <th>Request Subject</th>
                                             <th>Requestor Name</th>
                                             <th>Date Requested</th>
+                                            <th>Request Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>

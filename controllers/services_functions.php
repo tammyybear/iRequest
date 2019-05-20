@@ -40,7 +40,7 @@ if(!function_exists('GetTopRequestData')){
 
 if(!function_exists('getServiceData')){
     function getServiceData($conn){
-        $query = mysqli_query($conn, "SELECT * from services_tb where request_status = 'Open' ORDER BY date_created ASC ");
+        $query = mysqli_query($conn, "SELECT * from services_tb ORDER BY date_created DESC ");
         if(mysqli_num_rows($query) > 0){
             while($row = mysqli_fetch_array($query)){
                 ?>
@@ -49,6 +49,7 @@ if(!function_exists('getServiceData')){
                    <td class="txt-oflo"><?php echo $row['request_subject'] ?></td>
                    <td class="txt-oflo"><?php echo getUserDetailsById($conn, $row['users_id'])[0] ?></td>
                    <td class="txt-oflo"><?php echo $row['date_created']?> </td>
+                   <td class="txt-oflo"><?php echo $row['request_status']?> </td>
                </tr>
                <?php
             }
