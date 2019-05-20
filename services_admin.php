@@ -1,6 +1,7 @@
 <?php
 include "controllers/include_partial_functions.php";
-include "controllers/department_functions.php";
+include "controllers/services_functions.php";
+include "controllers/users_functions.php";
 include "database/config.php";
 include "controllers/check_login.php";
 ?>
@@ -57,40 +58,57 @@ include "controllers/check_login.php";
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="col-md-8 col-xs-12">
                         <div class="white-box">
-                            <a href="services_user.php">
-                                <div class="col-in row">
-                                    <div class="col-md-6 col-sm-6 col-xs-6"> <i data-icon="E" class="linea-icon linea-basic"></i>
-                                        <h5 class="text-muted vb">REQUEST SERVICE</h5> </div>
-                                    <div class="col-md-6 col-sm-6 col-xs-6">
-                                        <h3 class="counter text-right m-t-15 text-primary"></h3> </div>
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <div class="progress">
-                                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 100%"> <span class="sr-only"></span> </div>
-                                        </div>
+                            <h3 class="box-title">TICKET ID: <?php echo GetTopRequestData($conn)[5] ?></h3>
+                            <form class="form-horizontal form-material" method="post" action="services_admin_action.php">
+                                <div class="form-group">
+                                    <label class="col-md-12">Service Request Subject</label>
+                                    <div class="col-md-12">                                   
+                                        <input type="text" value="<?php echo GetTopRequestData($conn)[1] ?>" class="form-control form-control-line" name="request_subject" readonly>                                        
                                     </div>
                                 </div>
-                            </a>
-                        </div>
-                    </div>                    
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                        <div class="white-box">
-                            <a data-target="#myModal" data-toggle="modal" href="#myModal">
-                                <div class="col-in row">
-                                    <div class="col-md-6 col-sm-6 col-xs-6"> <i class="linea-icon linea-basic" data-icon="&#xe01b;"></i>
-                                        <h5 class="text-muted vb">TO DO LIST</h5> </div>
-                                    <div class="col-md-6 col-sm-6 col-xs-6">
-                                        <h3 class="counter text-right m-t-15 text-primary"></h3> </div>
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <div class="progress">
-                                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 100%"> <span class="sr-only">40% Complete (success)</span> </div>
-                                        </div>
+                                <div class="form-group">
+                                    <label class="col-md-12">Service Request Description</label>
+                                    <div class="col-md-12">                                                              
+                                        <textarea class="form-control form-control-line" name="request_description" readonly><?php echo GetTopRequestData($conn)[2] ?></textarea>
                                     </div>
                                 </div>
-                            </a>
+                                <div class="form-group">
+                                    <label class="col-md-12">Requestor</label>
+                                    <div class="col-md-12">                                        
+                                        <input type="text" value="<?php echo getUserDetailsById($conn, GetTopRequestData($conn)[0])[0] ?>" class="form-control form-control-line" name="requestor_name">
+                                    </div>
+                                </div> 
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <button class="btn btn-success">Close Ticket</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                    </div>            
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="white-box">
+                            <h3 class="box-title">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Request Subject</th>
+                                            <th>Requestor Name</th>
+                                            <th>Date Requested</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                      <?php  getServiceData ($conn)?>
+                                    </tbody>
+                                </table> 
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- /.container-fluid -->

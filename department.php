@@ -102,9 +102,7 @@ include "controllers/check_login.php";
                             </div>
                         </div>
                     </div>
-                </div>
-              
-                <!-- /.row -->
+                </div>                              
             </div>
             <!-- /.container-fluid -->
             <?php get_FooterBlade(); ?>

@@ -25,4 +25,35 @@ if(!function_exists('CheckTicketId')){
     }
 }
 
+if(!function_exists('GetTopRequestData')){
+    function GetTopRequestData($conn){
+        $request_details = array();        
+        $query = mysqli_query($conn, "SELECT * from services_tb where request_status = 'Open' ORDER BY date_created ASC LIMIT 1");        
+        while($row = mysqli_fetch_array($query)){
+            array_push($request_details, $row['users_id'], $row['request_subject'], $row['request_description'], $row['request_status'], $row['date_created'], $row['ticket_id']);
+        }
+        
+        return $request_details;
+    }
+}
+
+if(!function_exists('getServiceData')){
+    function getServiceData($conn){
+        $query = mysqli_query($conn, "SELECT * from services_tb where request_status = 'Open' ORDER BY date_created ASC ");
+        if(mysqli_num_rows($query) > 0){
+            while($row = mysqli_fetch_array($query)){
+                ?>
+                <tr>
+                   <td class="txt-oflo"><?php echo $row['request_subject'] ?></td>
+                   <td class="txt-oflo"><?php echo $row['request_description'] ?></td>
+                   <td class="txt-oflo"><?php echo $row['date_created']?> </td>
+               </tr>
+               <?php
+            }
+        }else{
+            echo "No Department Found";
+        }
+    }
+}
+
 ?>
