@@ -61,7 +61,7 @@ include "controllers/check_login.php";
                     <div class="col-md-8 col-xs-12">
                         <div class="white-box">
                             <h3 class="box-title">TICKET ID: <?php echo GetTopRequestData($conn)[5] ?></h3>
-                            <form class="form-horizontal form-material" method="post" action="services_admin_action.php">
+                            <form class="form-horizontal form-material" method="post" action="services_admin_action.php<?php echo '?id='.GetTopRequestData($conn)[6] ?>">                            
                                 <div class="form-group">
                                     <label class="col-md-12">Service Request Subject</label>
                                     <div class="col-md-12">                                   
@@ -103,6 +103,7 @@ include "controllers/check_login.php";
                                 <table class="table">
                                     <thead>
                                         <tr>
+                                            <th>Ticket ID</th>
                                             <th>Request Subject</th>
                                             <th>Requestor Name</th>
                                             <th>Date Requested</th>

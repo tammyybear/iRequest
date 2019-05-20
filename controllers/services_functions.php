@@ -30,7 +30,7 @@ if(!function_exists('GetTopRequestData')){
         $request_details = array();        
         $query = mysqli_query($conn, "SELECT * from services_tb where request_status = 'Open' ORDER BY date_created ASC LIMIT 1");        
         while($row = mysqli_fetch_array($query)){
-            array_push($request_details, $row['users_id'], $row['request_subject'], $row['request_description'], $row['request_status'], $row['date_created'], $row['ticket_id']);
+            array_push($request_details, $row['users_id'], $row['request_subject'], $row['request_description'], $row['request_status'], $row['date_created'], $row['ticket_id'], $row['services_id']);
         }
         
         return $request_details;
@@ -44,6 +44,7 @@ if(!function_exists('getServiceData')){
             while($row = mysqli_fetch_array($query)){
                 ?>
                 <tr>
+                <td class="txt-oflo"><?php echo $row['ticket_id'] ?></td>
                    <td class="txt-oflo"><?php echo $row['request_subject'] ?></td>
                    <td class="txt-oflo"><?php echo getUserDetailsById($conn, GetTopRequestData($conn)[0])[0] ?></td>
                    <td class="txt-oflo"><?php echo $row['date_created']?> </td>
