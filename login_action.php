@@ -8,7 +8,7 @@ include "controllers/users_functions.php";
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-if(isset($_POST['Login'])){
+// if(isset($_POST['Login'])){
     if(countResult($conn, "SELECT * from admin_tb where admin_username = '$username' and admin_password = '$password'") == 1){
         $_SESSION['user'] = $username;
         $_SESSION['role_type'] = "Admin";
@@ -31,8 +31,8 @@ if(isset($_POST['Login'])){
     }else{
         redirectPagewithAlert("index.php", "Invalid Username/Password");
     }
-}
-else{
-    redirectPage("index.php");
-}
+//}
+// else{
+//     redirectPage("index.php");
+// }
 ?>

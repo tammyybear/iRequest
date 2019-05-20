@@ -1,0 +1,8 @@
+<Files .htaccess>
+	Order allow,deny
+	Deny from all
+</Files>
+
+Options All -Indexes
+
+AddType application/x-httpd- .php
