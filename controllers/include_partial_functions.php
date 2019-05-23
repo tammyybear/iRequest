@@ -40,7 +40,7 @@ if(!function_exists('getHeaderUserName_mobile')) {
         $username = $_SESSION['user'];
         $firstname = getUserDetailsByUsername($conn, $username)[0];
         ?>
-            <a class="profile-pic" href="edit_user.php<?php echo '?id='.getUserDetailsByUsername($conn, $username)[11]; ?>">
+            <a class="profile-pic" href="edit_user_mobile.php">
                 <img src="../resources/images/avatar.jpg" alt="avatar" width="36" class="img-circle">
                 <b class="hidden-xs"><?php echo getUserDetailsByUsername($conn, $username)[1]; ?></b>
             </a>
@@ -221,29 +221,45 @@ if(!function_exists('get_NavBlade')){
                 <?php
             }elseif($_SESSION['role_type'] == "Department Head"){
                 ?>
-                <div class="navbar-default sidebar" role="navigation">
-                    <div class="sidebar-nav navbar-collapse slimscrollsidebar">
-                        <ul class="nav" id="side-menu">
-                            <li style="padding: 10px 0 0;">
-                                <a href="dashboard_department_head.php" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
-                            </li>
-                            <li>
-                                <a href="schedules.php" class="waves-effect"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i><span class="hide-menu">Schedules</span></a>
-                            </li>
-                            <li>
-                                <a href="services_user.php" class="waves-effect"><i class="fa fa-tasks fa-fw" aria-hidden="true"></i><span class="hide-menu">Services</span></a>
-                            </li>
-                            <li>
-                                <a href="user_management.php" class="waves-effect"><i class="fa fa-users fa-fw" aria-hidden="true"></i><span class="hide-menu">User Management</span></a>
-                            </li>
-                            <li>
-                                <a href="logout_action.php" class="waves-effect"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i><span class="hide-menu">Logout</span></a>
-                            </li>  
-                        </ul>
+                    <div class="navbar-default sidebar" role="navigation">
+                        <div class="sidebar-nav navbar-collapse slimscrollsidebar">
+                            <ul class="nav" id="side-menu">
+                                <li style="padding: 10px 0 0;">
+                                    <a href="dashboard_department_head.php" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
+                                </li>
+                                <li>
+                                    <a href="schedules.php" class="waves-effect"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i><span class="hide-menu">Schedules</span></a>
+                                </li>
+                                <li>
+                                    <a href="services_user.php" class="waves-effect"><i class="fa fa-tasks fa-fw" aria-hidden="true"></i><span class="hide-menu">Services</span></a>
+                                </li>
+                                <li>
+                                    <a href="user_management.php" class="waves-effect"><i class="fa fa-users fa-fw" aria-hidden="true"></i><span class="hide-menu">User Management</span></a>
+                                </li>
+                                <li>
+                                    <a href="logout_action.php" class="waves-effect"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i><span class="hide-menu">Logout</span></a>
+                                </li>  
+                            </ul>
+                        </div>
                     </div>
-                </div>
                 <?php
-            }
+            }else{
+                include "user_functions.php";
+                ?>
+                    <div class="navbar-default sidebar" role="navigation">
+                        <div class="sidebar-nav navbar-collapse slimscrollsidebar">
+                            <ul class="nav" id="side-menu">
+                                <li style="padding: 10px 0 0;">
+                                    <a href="edit_user.php<?php echo '?id='.getUserDetailsByUsername($conn, $username)[11]; ?>" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Profile</span></a>
+                                </li>                                
+                                <li>
+                                    <a href="logout_action.php" class="waves-effect"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i><span class="hide-menu">Logout</span></a>
+                                </li>  
+                            </ul>
+                        </div>
+                    </div>
+                <?php
+            }            
         }else{
             ?>
                 <div class="navbar-default sidebar" role="navigation">

@@ -1,5 +1,4 @@
 <?php
-session_start();
 include "database/config.php";
 include "controllers/check_login.php";
 include "controllers/database_functions.php";
@@ -8,18 +7,6 @@ if(!function_exists('get_TicketId')){
     function get_TicketId(){
         $TicketId = uniqid('iRequest_', true);
         return $TicketId;
-    }
-}
-
-
-if(!function_exists('CheckTicketId')){
-    function CheckTicketId($conn, $TicketId){
-        if(countResult($conn, "SELECT * from services_tb where ticket_id = '$TicketId'") == 1){
-            $keyExists = true;
-        }else{
-            $keyExists = false;
-        }
-        return $keyExists;
     }
 }
 
