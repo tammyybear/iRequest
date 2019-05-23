@@ -18,14 +18,14 @@ $password = $_POST['password'];
         if($user_status == "Active"){
             $_SESSION['user'] = $username;
             $role_type = getUserDetailsByUsername($conn, $username)[9];
-            if($role_type == "Department Head"){
-                $_SESSION['role_type'] = $role_type;
-                redirectPagewithAlert("dashboard_department_head.php", "Welcome Department Head");
-            }else{
-                // $_SESSION['role_type'] = $role_type;
-                // redirectPagewithAlert("mobile_app/dashboard_department_member.php", "Welcome Department Member");
-                redirectPagewithAlert("index.php", "Invalid Username/Password");
-            }
+            // if($role_type == "Department Head"){
+            //     $_SESSION['role_type'] = $role_type;
+            redirectPagewithAlert("dashboard_department_head.php", "Welcome Department Head");
+            // }else{
+            // $_SESSION['role_type'] = $role_type;
+            // redirectPagewithAlert("mobile_app/dashboard_department_member.php", "Welcome Department Member");
+            redirectPagewithAlert("index.php", "Invalid Username/Password");
+            //}
         }else{
             redirectPagewithAlert("index.php", "User account not active, please see Admin / Dept. Head");
         }

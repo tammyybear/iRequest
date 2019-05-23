@@ -268,4 +268,32 @@ if(!function_exists('get_NavBlade')){
         }
     }
 }
+
+
+if(!function_exists('get_NavBlade_mobile')){
+    function get_NavBlade_mobile(){
+        if(isset($_SESSION['role_type'])) {
+            ?>
+                <div class="navbar-default sidebar" role="navigation">
+                    <div class="sidebar-nav navbar-collapse slimscrollsidebar">
+                        <ul class="nav" id="side-menu">
+                            <li style="padding: 10px 0 0;">
+                                <a href="dashboard_department_member.php" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
+                            </li>
+                            <li>
+                                <a href="reserve_first_step.php" class="waves-effect"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i><span class="hide-menu">Reservation</span></a>
+                            </li>
+                            <li>
+                                <a href="../services_user.php" class="waves-effect"><i class="fa fa-tasks fa-fw" aria-hidden="true"></i><span class="hide-menu">Services</span></a>
+                            </li>
+                            <li>
+                                <a href="logout_action.php" class="waves-effect"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i><span class="hide-menu">Logout</span></a>
+                            </li>  
+                        </ul>
+                    </div>
+                </div>
+            <?php
+        }
+    }
+}
 ?>
