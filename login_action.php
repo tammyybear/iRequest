@@ -22,9 +22,9 @@ $password = $_POST['password'];
                 $_SESSION['role_type'] = $role_type;
                 redirectPagewithAlert("dashboard_department_head.php", "Welcome Department Head");
             }else{
-                // $_SESSION['role_type'] = $role_type;
-                // redirectPagewithAlert("mobile_app/dashboard_department_member.php", "Welcome Department Member");
-                redirectPagewithAlert("index.php", "Invalid Username/Password");
+                $_SESSION['role_type'] = $role_type;
+                $get_id =getUserDetailsByUsername($conn, $username)[11];
+                redirectPagewithAlert("edit_user.php?id= $get_id", "Welcome Department Member");                
             }
         }else{
             redirectPagewithAlert("index.php", "User account not active, please see Admin / Dept. Head");

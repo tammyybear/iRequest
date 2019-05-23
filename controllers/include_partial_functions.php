@@ -243,7 +243,7 @@ if(!function_exists('get_NavBlade')){
                     </div>
                 <?php
             }else{
-                include "user_functions.php";
+                include "users_functions.php";
                 ?>
                     <div class="navbar-default sidebar" role="navigation">
                         <div class="sidebar-nav navbar-collapse slimscrollsidebar">

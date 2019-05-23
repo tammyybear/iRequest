@@ -272,7 +272,7 @@ if(!function_exists('getUsersReservationData_mobile')){
                     <?php
                 }
             }else{
-                echo "No Users Found";
+                echo "No Reservations Found";
             }
         }
     }
