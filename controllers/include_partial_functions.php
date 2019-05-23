@@ -243,28 +243,22 @@ if(!function_exists('get_NavBlade')){
                     </div>
                 </div>
                 <?php
-            }else{
-                ?>
+            }
+        }else{
+            ?>
                 <div class="navbar-default sidebar" role="navigation">
                     <div class="sidebar-nav navbar-collapse slimscrollsidebar">
                         <ul class="nav" id="side-menu">
                             <li style="padding: 10px 0 0;">
-                                <a href="dashboard_department_member.php" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
+                                <a href="index.php" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Login Page</span></a>
                             </li>
                             <li>
-                                <a href="reserve_first_step.php" class="waves-effect"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i><span class="hide-menu">Reservation</span></a>
-                            </li>
-                            <li>
-                                <a href="services_user.php" class="waves-effect"><i class="fa fa-tasks fa-fw" aria-hidden="true"></i><span class="hide-menu">Services</span></a>
-                            </li>
-                            <li>
-                                <a href="logout_action.php" class="waves-effect"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i><span class="hide-menu">Logout</span></a>
-                            </li>  
+                                <a href="download.php" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Download App</span></a>
+                            </li>                            
                         </ul>
                     </div>
                 </div>
-                <?php
-            }
+            <?php
         }
     }
 }
@@ -273,26 +267,52 @@ if(!function_exists('get_NavBlade')){
 if(!function_exists('get_NavBlade_mobile')){
     function get_NavBlade_mobile(){
         if(isset($_SESSION['role_type'])) {
-            ?>
-                <div class="navbar-default sidebar" role="navigation">
-                    <div class="sidebar-nav navbar-collapse slimscrollsidebar">
-                        <ul class="nav" id="side-menu">
-                            <li style="padding: 10px 0 0;">
-                                <a href="dashboard_department_member.php" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
-                            </li>
-                            <li>
-                                <a href="reserve_first_step.php" class="waves-effect"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i><span class="hide-menu">Reservation</span></a>
-                            </li>
-                            <li>
-                                <a href="services_user.php" class="waves-effect"><i class="fa fa-tasks fa-fw" aria-hidden="true"></i><span class="hide-menu">Services</span></a>
-                            </li>
-                            <li>
-                                <a href="logout_action.php" class="waves-effect"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i><span class="hide-menu">Logout</span></a>
-                            </li>  
-                        </ul>
+            if($_SESSION['role_type'] == "Department Member"){
+                ?>
+                    <div class="navbar-default sidebar" role="navigation">
+                        <div class="sidebar-nav navbar-collapse slimscrollsidebar">
+                            <ul class="nav" id="side-menu">
+                                <li style="padding: 10px 0 0;">
+                                    <a href="dashboard_department_member.php" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
+                                </li>
+                                <li>
+                                    <a href="reserve_first_step.php" class="waves-effect"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i><span class="hide-menu">Reservation</span></a>
+                                </li>
+                                <li>
+                                    <a href="services_user_mobile.php" class="waves-effect"><i class="fa fa-tasks fa-fw" aria-hidden="true"></i><span class="hide-menu">Services</span></a>
+                                </li>
+                                <li>
+                                    <a href="logout_action_mobile.php" class="waves-effect"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i><span class="hide-menu">Logout</span></a>
+                                </li>  
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            <?php
+                <?php
+            }elseif($_SESSION['role_type'] == "Department Head"){
+                ?>
+                    <div class="navbar-default sidebar" role="navigation">
+                        <div class="sidebar-nav navbar-collapse slimscrollsidebar">
+                            <ul class="nav" id="side-menu">
+                                <li style="padding: 10px 0 0;">
+                                    <a href="dashboard_department_head_mobile.php" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
+                                </li>
+                                <li>
+                                    <a href="reserve_first_step.php" class="waves-effect"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i><span class="hide-menu">Schedules</span></a>
+                                </li>
+                                <li>
+                                    <a href="services_user_mobile.php" class="waves-effect"><i class="fa fa-tasks fa-fw" aria-hidden="true"></i><span class="hide-menu">Services</span></a>
+                                </li>
+                                <li>
+                                    <a href="user_management_mobile.php" class="waves-effect"><i class="fa fa-users fa-fw" aria-hidden="true"></i><span class="hide-menu">User Management</span></a>
+                                </li>
+                                <li>
+                                    <a href="logout_action_mobile.php" class="waves-effect"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i><span class="hide-menu">Logout</span></a>
+                                </li>  
+                            </ul>
+                        </div>
+                    </div>
+                <?php
+            }
         }
     }
 }

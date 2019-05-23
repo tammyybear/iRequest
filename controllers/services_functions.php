@@ -11,9 +11,7 @@ if(!function_exists('get_TicketId')){
     }
 }
 
-<<<<<<< HEAD
-?>
-=======
+
 if(!function_exists('CheckTicketId')){
     function CheckTicketId($conn, $TicketId){
         if(countResult($conn, "SELECT * from services_tb where ticket_id = '$TicketId'") == 1){
@@ -124,4 +122,3 @@ if(!function_exists('CheckCountService')){
 }
 
 ?>
->>>>>>> e9e830edd629b975503f6dae390d7cfcdd77f883

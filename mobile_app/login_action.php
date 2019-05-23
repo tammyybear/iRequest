@@ -18,9 +18,8 @@ $password = $_POST['password'];
                 $_SESSION['role_type'] = $role_type;
                 redirectPagewithAlert("dashboard_department_member.php", "Welcome Department Member");
             }else{
-                // $_SESSION['role_type'] = $role_type;
-                // redirectPagewithAlert("mobile_app/dashboard_department_member.php", "Welcome Department Member");
-                redirectPagewithAlert("index.php", "Invalid Username/Password");
+                $_SESSION['role_type'] = $role_type;
+                redirectPagewithAlert("dashboard_department_head_mobile.php", "Welcome Department Head");
             }
         }else{
             redirectPagewithAlert("index.php", "User account not active, please see Admin / Dept. Head");
