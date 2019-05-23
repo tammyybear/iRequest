@@ -77,6 +77,8 @@ include "../database/config.php";
                             <div style='clear:both'></div>
                         </div>
                     </div>
+                    <div class="col-md-2 col-sm-4 col-xs-12 pull-right"> </div>
+                    <div class="col-md-2 col-sm-4 col-xs-12 pull-right"> </div>
                     <div class="col-md-6">
                         <div class="white-box">
                             <?php $category = "Facilities"; getReservationForm($conn, $category) ?>
@@ -84,7 +86,7 @@ include "../database/config.php";
                         </div>
                     </div>                    
                 </div>
-                
+
                 <div class="row">
                     <h3 class="box-title"></h3>
                     <div class="col-md-2 col-sm-4 col-xs-12 pull-right">
