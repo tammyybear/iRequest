@@ -114,7 +114,7 @@ if(!function_exists('get_headBlade_mobile')){
             <link rel="stylesheet" href="../resources/plugins/datatable.css" >
             <link href="../resources/plugins/bootstrap_select/css/bootstrap-select.min.css" >
             <!-- color CSS -->
-            <link rel="stylesheet" id="theme" href="../resources/css/colors/blue-dark.css" >
+            <link rel="stylesheet" id="theme" href="../resources/css/colors/blue-dark.css" >            
 
             <!-- [if lt IE 9]> -->
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>

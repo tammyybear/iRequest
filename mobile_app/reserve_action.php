@@ -18,7 +18,7 @@ if(checkDatesValidity($date_from_requested, $date_to_requested) == 1){
         redirectPageWithAlert("reserve_first_step.php", "You have already made a reservation for this.");
     }else{
         if(updateDatabase($conn, "INSERT into bookings_tb(users_id,inventory_item_id, date_from_requested, date_to_requested, status, category) VALUES('$user_id', '$inventory_item_id', '$date_from_requested', '$date_to_requested', '$status', '$category')") == 1){
-            redirectPageWithAlert("my_reservations.php", "Reservation Request Sent. Please make sure the letter was sent to the Admin for approval.");
+            redirectPageWithAlert("reserve_first_step.php", "Reservation Request Sent. Please make sure the letter was sent to the Admin for approval.");
         }else{
             redirectPageWithAlert("reserve_first_step.php", "Error. Please Try Again");
         }

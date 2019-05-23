@@ -218,7 +218,7 @@ if(!function_exists('getReservationForm')){
         ?>
         <form class="form-horizontal form-material" method="post" action="reserve_action.php">
             <div class="form-group">
-                <label class="col-md-12">What to Reserve?</label>
+                <label class="col-md-12"><?php echo $category ?> to Reserve</label>
                 <div class="col-md-12">
                      <?php
                         if($category == "Facilities"){
@@ -230,23 +230,51 @@ if(!function_exists('getReservationForm')){
                 </div>
             </div>
             <div class="form-group">
-                <label for="example-email" class="col-md-12">Reserve From</label>
+                <label for="example-email" class="col-md-12">Reservation Start Date</label>
                 <div class="col-md-12">
-                    <input type="datetime-local" class="form-control form-control-line" name="date_from_requested" id="example-email" required> </div>
+                    <input type="datetime-local" class="form-control form-control-line" name="date_from_requested" required> </div>
                     <input type = "hidden" name = "category" value = "<?php echo $category ?>" required>
             </div>
             <div class="form-group">
-                <label for="example-email" class="col-md-12">Reserve To</label>
+                <label class="col-md-12">Reservation End Date</label>
                 <div class="col-md-12">
-                    <input type="datetime-local" class="form-control form-control-line" name="date_to_requested" id="example-email" required> </div>
+                    <input type="datetime-local" class="form-control form-control-line" name="date_to_requested" required> </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-12">
-                    <button class="btn btn-success" name="Login">Send Request</button>
+                    <button class="btn btn-success" name="Login">Send Reservation Schedule</button>
                 </div>
             </div>
         </form>
         <?php
+    }
+}
+
+if(!function_exists('getUsersReservationData_mobile')){
+    function getUsersReservationData_mobile($conn){
+        include "users_functions.php";
+        include "inventory_functions.php";
+        $user_id = getUserDetailsByUsername($conn, $_SESSION['user'])[11];
+        $query = mysqli_query($conn, "SELECT * from bookings_tb where users_id = '$user_id' ORDER BY date_from_requested ASC");      
+        if(! $query){
+            echo mysqli_error($conn);
+        }else{
+            if(mysqli_num_rows($query)>0){
+                while($row = mysqli_fetch_array($query)){
+                    ?>
+                     <tr>
+                        <td class="txt-oflo"><?php echo getInventoryDetailsById($conn, $row['inventory_item_id'])[0]?></td>
+                        <td class="txt-oflo"><?php echo $row['date_from_requested'] ?></td>
+                        <td class="txt-oflo"><?php echo $row['date_to_requested'] ?></td>
+                        <td class="txt-oflo"><?php echo $row['status'] ?></td>
+                        <td class="txt-oflo"><?php echo $row['category'] ?></td>                    
+                    </tr>
+                    <?php
+                }
+            }else{
+                echo "No Users Found";
+            }
+        }
     }
 }
 ?>

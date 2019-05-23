@@ -92,81 +92,55 @@ include "../database/config.php";
                 </div>
                 <div class="row">
                     <div id="facility_calendar" style="display:none">
-                        <div class="white-box">
-                            <div class="col-md-6">                            
-                                <?php echo getFacilityCalendar($conn, date("m"), date("Y")); ?>
+                        <div class="col-md-6">                            
+                            <?php echo getFacilityCalendar($conn, date("m"), date("Y")); ?>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="white-box">
+                                <?php $category = "Facilities"; getReservationForm($conn, $category) ?>
+                                <button class="btn btn-danger" onclick = "hideCalendar()">Choose Again</button>                                                            
                             </div>
-                            <div class="col-md-6">
-                                <form class="form-horizontal form-material" method="post" action="reserve_action.php">
-                                    <div class="form-group">
-                                        <label class="col-md-12">Facility to Reserve</label>
-                                        <div class="col-md-12">
-                                            <?php getFacilitiesDropDown($conn); ?>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-12">Reservation Start Date</label>
-                                        <div class="col-md-12">
-                                            <input type="datetime-local" class="form-control form-control-line" name="date_from_requested" required>
-                                            <input type = "hidden" name = "category" value = "Facilities" required>    
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-12">Reservation End Date</label>
-                                        <div class="col-md-12">
-                                            <input type="datetime-local" class="form-control form-control-line" name="date_to_requested" required>
-                                            <input type = "hidden" name = "category" value = "Facilities" required>    
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-sm-12">
-                                            <button class="btn btn-success" name="reservation_button">Request Reservation</button>
-                                        </div>
-                                    </div>
-                                </form>
-                                <button class="btn btn-danger" onclick = "hideCalendar()">Choose Again</button>                                
-                            </div>
-                        </div> 
+                        </div>
                     </div>
                     <div id="automobile_calendar" style="display:none">
-                        <div class="white-box">
-                            <div class="col-md-6">                            
-                                <?php getAutomobileCalendar($conn, date("m"), date("Y")); ?>
-                            </div>
-                            <div class="col-md-6">
-                                <form class="form-horizontal form-material" method="post" action="reserve_action.php">
-                                    <div class="form-group">
-                                        <label class="col-md-12">Automobile to Reserve</label>
-                                        <div class="col-md-12">
-                                            <?php getAutomobileDropDown($conn); ?>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-12">Reservation Start Date</label>
-                                        <div class="col-md-12">
-                                            <input type="datetime-local" class="form-control form-control-line" name="date_from_requested" required>
-                                            <input type = "hidden" name = "category" value = "Facilities" required>    
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-12">Reservation End Date</label>
-                                        <div class="col-md-12">
-                                            <input type="datetime-local" class="form-control form-control-line" name="date_to_requested" required>
-                                            <input type = "hidden" name = "category" value = "Facilities" required>    
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-sm-12">
-                                            <button class="btn btn-success" name="reservation_button">Request Reservation</button>
-                                        </div>
-                                    </div>
-                                </form>
+                        <div class="col-md-6">                            
+                            <?php getAutomobileCalendar($conn, date("m"), date("Y")); ?>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="white-box">
+                                <?php $category = "Automobile"; getReservationForm($conn, $category) ?>
                                 <button class="btn btn-danger" onclick = "hideCalendar()">Choose Again</button>                                
                             </div>
-                        </div> 
+                        </div>
                     </div>                                      
-                </div>          
-                  
+                </div>
+
+                <div class="row" id="table_list">
+                    <div class="col-sm-8">
+                        <div class="white-box">
+                            <h3 class="box-title">My Reservation List</h3>
+                            <div class="col-md-2 col-sm-4 col-xs-12 pull-right"> </div>
+                            <div class="table-responsive">
+                                <table class="table ">
+                                    <thead>
+                                        <tr>
+                                            <th>Reserved Automobile / Facility</th>
+                                            <th>Reservation Date Start</th>
+                                            <th>Reservation Date End</th>
+                                            <th>Reservation Status</th>
+                                            <th>Category</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                            getUsersReservationData_mobile($conn);
+                                        ?>
+                                    </tbody>
+                                </table></div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <!-- /.container-fluid -->
         </div>
@@ -181,12 +155,15 @@ include "../database/config.php";
         document.getElementById("choose_buttons").style.display = "none";
           if(category == "Facilities"){
             document.getElementById("facility_calendar").style.display = "block";
+            document.getElementById("table_list").style.display = "none";
           }else{
             document.getElementById("automobile_calendar").style.display = "block";
+            document.getElementById("table_list").style.display = "none";
           }
       }
 
       function hideCalendar(){
+        document.getElementById("table_list").style.display = "block";
         document.getElementById("choose_buttons").style.display = "block";
         document.getElementById("facility_calendar").style.display = "none";
         document.getElementById("automobile_calendar").style.display = "none";
