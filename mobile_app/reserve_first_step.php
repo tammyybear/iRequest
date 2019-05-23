@@ -71,18 +71,12 @@ include "../database/config.php";
                     <!-- /.col-lg-12 -->
                 </div>
                 <div class="row">
-                    <div class="col-md-5">
+                    <div class="col-md-12">
                         <div id='wrap'>
                             <div id='calendar'></div>
                             <div style='clear:both'></div>
                         </div>
-                    </div>                
-                    <div class="col-md-6">
-                        <div class="white-box">
-                            <?php $category = "Facilities"; getReservationForm($conn, $category) ?>
-                            <button class="btn btn-danger" onclick = "hideCalendar()">Choose Again</button>                                                            
-                        </div>
-                    </div>                    
+                    </div>                                                     
                 </div>
 
                 <div class="row">
@@ -91,6 +85,25 @@ include "../database/config.php";
                         
                     </div>
                 </div>
+                <div class="row">
+                    <h3 class="box-title"></h3>
+                    <div class="col-md-2 col-sm-4 col-xs-12 pull-right">
+                        
+                    </div>
+                </div>       
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="white-box">                            
+                            <center>
+                                <?php $category = "Facilities"; getReservationForm($conn, $category) ?>
+                                <button class="btn btn-danger" onclick = "hideCalendar()">Choose Again</button>                                                            
+                            </center>                            
+                        </div>   
+                    </div>
+                </div>
+
+
                 <div class="row">
                     <h3 class="box-title"></h3>
                     <div class="col-md-2 col-sm-4 col-xs-12 pull-right">
@@ -185,10 +198,10 @@ include "../database/config.php";
       }
       </script> -->
 
-<script src='../resources/js/jquery-1.10.2.js' type="text/javascript"></script>
-<script src='../resources/js/jquery-ui.custom.min.js' type="text/javascript"></script>
-<script src='../resources/js/fullcalendar.js' type="text/javascript"></script>
-<script>
+    <script src='../resources/js/jquery-1.10.2.js' type="text/javascript"></script>
+    <script src='../resources/js/jquery-ui.custom.min.js' type="text/javascript"></script>
+    <script src='../resources/js/fullcalendar.js' type="text/javascript"></script>
+    <script>
 
 	$(document).ready(function() {
 	    var date = new Date();
