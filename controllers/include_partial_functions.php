@@ -41,12 +41,12 @@ if(!function_exists('getHeaderUserName_mobile')) {
         ?>
             <a class="profile-pic" href="edit_user.php<?php echo '?id='.getUserDetailsByUsername($conn, $username)[11]; ?>">
                 <img src="../resources/images/avatar.jpg" alt="avatar" width="36" class="img-circle">
-                <b class="hidden-xs"><?php echo $firstname ?></b>
+                <b class="hidden-xs"><?php echo getUserDetailsByUsername($conn, $username)[1]; ?></b>
             </a>
         <?php                     
     }
 }
-
+ 
 if(!function_exists('get_headBlade')){
     function get_headBlade(){
         ?>
@@ -251,7 +251,7 @@ if(!function_exists('get_NavBlade')){
                                 <a href="dashboard_department_member.php" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
                             </li>
                             <li>
-                                <a href="schedules.php" class="waves-effect"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i><span class="hide-menu">Schedules</span></a>
+                                <a href="reserve_first_step.php" class="waves-effect"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i><span class="hide-menu">Reservation</span></a>
                             </li>
                             <li>
                                 <a href="services_user.php" class="waves-effect"><i class="fa fa-tasks fa-fw" aria-hidden="true"></i><span class="hide-menu">Services</span></a>

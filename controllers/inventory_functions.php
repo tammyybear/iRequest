@@ -46,7 +46,7 @@ if(!function_exists('getInventoryDetailsById')){
         $items_count = countResult($conn, "SELECT * from inventory_items_tb where inventory_item_id = '$inventory_item_id'");
         $query = mysqli_query($conn, "SELECT * from inventory_items_tb where inventory_item_id = '$inventory_item_id'");
         while($row = mysqli_fetch_array($query)){
-            array_push($inventory_details, $row['item_name'], $row['item_description'], $items_count);
+            array_push($inventory_details, $row['item_name'], $row['item_description'], $items_count, $row['inventory_cat_id']);
         }
 
         return $inventory_details;
@@ -54,7 +54,7 @@ if(!function_exists('getInventoryDetailsById')){
 }
 
 if(!function_exists('getInventoryDropDown')){
-    function getDepartmentDropDown($conn){
+    function getInventoryDropDown($conn){
         ?>
         <select name = "inventory_cat_id" class="form-control form-control-line" required>
             <?php 
@@ -70,6 +70,17 @@ if(!function_exists('getInventoryDropDown')){
     }
 }
 
+if(!function_exists('getInventoryCatType')){
+    function getInventoryCatType($conn, $inventory_cat_id){
+        $category = "";
+        $query = mysqli_query($conn, "SELECT * from inventory_category where inventory_cat_id = '$inventory_cat_id'");
+        while($row = mysqli_fetch_array($query)){
+            $category = $row['category'];
+        }
+
+        return $category;
+    }
+}
 
 
 ?>

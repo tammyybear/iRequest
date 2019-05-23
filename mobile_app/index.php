@@ -44,7 +44,7 @@ include "../controllers/include_partial_functions.php";
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-12">
-                                        <button class="btn btn-success">Login</button>
+                                        <button class="btn btn-success" name="login">Login</button>
                                     </div>
                                 </div>
                             </form>

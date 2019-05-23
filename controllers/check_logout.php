@@ -1,5 +1,5 @@
 <?php
-if(isset($_SESSION['user']) && isset($_SESSION['role_type'])){
+/**if(isset($_SESSION['user']) && isset($_SESSION['role_type'])){
     if($_SESSION['role_type'] == "Admin"){
         header("LOCATION: dashboard_admin.php");
     }elseif($_SESSION['role_type'] == "Department Head"){
@@ -7,5 +7,5 @@ if(isset($_SESSION['user']) && isset($_SESSION['role_type'])){
     }else{
         header("LOCATION: dashboard_department_member.php");
     }
-}
+} */
 ?>
