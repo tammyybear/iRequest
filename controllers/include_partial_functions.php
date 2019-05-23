@@ -114,7 +114,10 @@ if(!function_exists('get_headBlade_mobile')){
             <link rel="stylesheet" href="../resources/plugins/datatable.css" >
             <link href="../resources/plugins/bootstrap_select/css/bootstrap-select.min.css" >
             <!-- color CSS -->
-            <link rel="stylesheet" id="theme" href="../resources/css/colors/blue-dark.css" >            
+            <link rel="stylesheet" id="theme" href="../resources/css/colors/blue-dark.css" >    
+            
+            <link href='../resources/css/fullcalendar.css' rel='stylesheet' />
+            <link href='../resources/css/fullcalendar.print.css' rel='stylesheet' media='print' />
 
             <!-- [if lt IE 9]> -->
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -177,7 +180,6 @@ if(!function_exists('get_JSBlade_mobile')){
             <script src="../resources/plugins/bootstrap_select/js/bootstrap-select.min.js"></script>
             <script src="../resources/plugins/bower_components/toast-master/js/jquery.toast.js"></script>
             <script src="https://unpkg.com/sweetalert2@7.1.2/dist/sweetalert2.all.js"></script>
-
         <?php
     }
 }
