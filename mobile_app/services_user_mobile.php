@@ -84,7 +84,6 @@ include "../controllers/check_login.php";
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->
-            <?php get_FooterBlade(); ?>
         </div>
         <!-- /#page-wrapper -->
     </div>
