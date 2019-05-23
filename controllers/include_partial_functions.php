@@ -284,7 +284,7 @@ if(!function_exists('get_NavBlade_mobile')){
                                 <a href="reserve_first_step.php" class="waves-effect"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i><span class="hide-menu">Reservation</span></a>
                             </li>
                             <li>
-                                <a href="../services_user.php" class="waves-effect"><i class="fa fa-tasks fa-fw" aria-hidden="true"></i><span class="hide-menu">Services</span></a>
+                                <a href="services_user.php" class="waves-effect"><i class="fa fa-tasks fa-fw" aria-hidden="true"></i><span class="hide-menu">Services</span></a>
                             </li>
                             <li>
                                 <a href="logout_action.php" class="waves-effect"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i><span class="hide-menu">Logout</span></a>
