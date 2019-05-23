@@ -14,10 +14,17 @@ if(!function_exists('getUserDetailsByUsername')){
 if(!function_exists('getUserDetailsById')){
     function getUserDetailsById($conn, $id){
         $users_details = array();
-        $query = mysqli_query($conn, "SELECT * from users_tb where user_id = '$id'");
-        while($row = mysqli_fetch_array($query)){
-            array_push($users_details, $row['first_name'], $row['middle_name'], $row['last_name'], $row['name_extension'], $row['mobile_number'], $row['address'], $row['username'], $row['password'], $row['department_id'], $row['role_type'], $row['user_status']);
-        }
+        if(countResult($conn, "SELECT * from admin_tb where admin_id = '$id'") == 1){
+            $query = mysqli_query($conn, "SELECT * from admin_tb where admin_id = '$id'");
+            while($row = mysqli_fetch_array($query)){
+                array_push($users_details, $row['admin_username'], $row['admin_password'],$row['admin_id'], );
+            }
+        }else{
+            $query = mysqli_query($conn, "SELECT * from users_tb where user_id = '$id'");
+            while($row = mysqli_fetch_array($query)){
+                array_push($users_details, $row['first_name'], $row['middle_name'], $row['last_name'], $row['name_extension'], $row['mobile_number'], $row['address'], $row['username'], $row['password'], $row['department_id'], $row['role_type'], $row['user_status']);
+            }
+        }                
         
         return $users_details;
     }
@@ -70,45 +77,70 @@ if(!function_exists('getAddUserForm')){
                             <div class="form-group">
                                 <label class="col-md-12">First Name *</label>
                                 <div class="col-md-12">
-                                    <input type="text" placeholder="First Name" name="first_name" class="form-control form-control-line" required> </div>
+                                    <input type="text" placeholder="First Name" name="first_name" class="form-control form-control-line" required>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12">Middle Name (Optional)</label>
                                 <div class="col-md-12">
-                                    <input type="text" placeholder="Middle Name" name="middle_name" class="form-control form-control-line"> </div>
+                                    <input type="text" placeholder="Middle Name" name="middle_name" class="form-control form-control-line">
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12">Last Name *</label>
                                 <div class="col-md-12">
-                                    <input type="text" placeholder="Last Name" name="last_name" class="form-control form-control-line" required> </div>
+                                    <input type="text" placeholder="Last Name" name="last_name" class="form-control form-control-line" required>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12">Name Extension (Optional)</label>
                                 <div class="col-md-12">
-                                    <input type="text" placeholder="Name Extension" name="name_extension" class="form-control form-control-line"> </div>
+                                    <input type="text" placeholder="Name Extension" name="name_extension" class="form-control form-control-line">
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12">Mobile Number *</label>
                                 <div class="col-md-12">
-                                    <input type="text" placeholder="Mobile Number" name="mobile_number" class="form-control form-control-line" required> </div>
+                                    <input type="text" placeholder="Mobile Number" name="mobile_number" class="form-control form-control-line" required>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12">Address *</label>
                                 <div class="col-md-12">
-                                    <input type="text" placeholder="Address" name="address" class="form-control form-control-line" required> </div>
+                                    <input type="text" placeholder="Address" name="address" class="form-control form-control-line" required>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-md-12">Department</label>
-                                <div class="col-md-12">
-                                    <?php getDepartmentDropDown($conn); ?> </div>
-                            </div>
+                            <?php if($_SESSION['role_type'] == "Admin"){ ?>
+                                <div class="form-group">
+                                    <label class="col-md-12">Department</label>
+                                    <div class="col-md-12">
+                                        <?php getDepartmentDropDown($conn); ?>
+                                    </div>
+                                </div>
+                            <?php }else{ ?>
+                                <div class="form-group">
+                                    <label class="col-md-12">Department</label>
+                                    <div class="col-md-12">
+                                        <?php getDepartmentDropDownByUsername($conn, $_SESSION['user']); ?>
+                                    </div>
+                                </div>
+                            <?php } ?>                            
+                            <?php if($_SESSION['role_type'] == "Admin"){ ?>
+                                <div class="form-group">
+                                    <label class="col-md-12">Role Type</label>
+                                    <div class="col-md-12">
+                                        <?php getRoleTypes(); ?> 
+                                    </div>    
+                                </div>
+                            <?php }else{ ?>
+                                <div class="form-group">
+                                    <label class="col-md-12">Role Type</label>
+                                    <div class="col-md-12">
+                                        <option value = "Department Member">Department Member</option>
+                                    </div>    
+                                </div>
+                            <?php } ?>
                             
-                            <div class="form-group">
-                                <label class="col-md-12">Role Type</label>
-                                <div class="col-md-12">
-                                    <?php getRoleTypes(); ?> 
-                                </div>    
-                            </div>
                             <div class="form-group">
                                 <div class="col-sm-12">
                                     <button class="btn btn-success">Add User</button>

@@ -38,6 +38,7 @@ if(!function_exists('getHeaderUserName_mobile')) {
         include "../database/config.php";
         include "users_functions.php";
         $username = $_SESSION['user'];
+        $firstname = getUserDetailsByUsername($conn, $username)[0];
         ?>
             <a class="profile-pic" href="edit_user.php<?php echo '?id='.getUserDetailsByUsername($conn, $username)[11]; ?>">
                 <img src="../resources/images/avatar.jpg" alt="avatar" width="36" class="img-circle">

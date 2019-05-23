@@ -1,6 +1,5 @@
 <?php
 include "controllers/include_partial_functions.php";
-include "controllers/department_functions.php";
 include "database/config.php";
 include "controllers/check_login.php";
 ?>
@@ -49,7 +48,7 @@ include "controllers/check_login.php";
             <div class="container-fluid">
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Services</h4> </div>
+                        <h4 class="page-title">Request Services</h4> </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <ol class="breadcrumb">
                             <li class="active">Services</li>
@@ -62,14 +61,16 @@ include "controllers/check_login.php";
                         <div class="white-box">
                             <form class="form-horizontal form-material" method="post" action="services_user_action.php">
                                 <div class="form-group">
-                                    <label class="col-md-12">Request Subject</label>
+                                    <label class="col-md-12">Service Request Subject</label>
                                     <div class="col-md-12">
-                                        <input type="text" placeholder="Request Subject" name="request_subject" class="form-control form-control-line" required> </div>
+                                        <input type="text" placeholder="Service Request Subject" name="request_subject" class="form-control form-control-line" maxlength="100" minlength="5" required>
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="example-email" class="col-md-12">Request Description</label>
-                                    <div class="col-md-12">
-                                        <input type="text" placeholder="Request Description" class="form-control form-control-line" name="request_description"" required> </div>
+                                    <label for="example-email" class="col-md-12">Service Request Description</label>
+                                    <div class="col-md-12">                                        
+                                        <textarea placeholder="Service Request Description" class="form-control form-control-line" name="request_description" maxlength="300" minlength="25" required></textarea>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-12">

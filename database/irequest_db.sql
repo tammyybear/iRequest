@@ -2,10 +2,10 @@
 -- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 17, 2019 at 06:19 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.4
+-- Host: localhost
+-- Generation Time: May 21, 2019 at 04:36 AM
+-- Server version: 8.0.13-4
+-- PHP Version: 7.2.17-0ubuntu0.18.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,8 +19,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `irequest_db`
+-- Database: `M5vKHHE91E`
 --
+CREATE DATABASE IF NOT EXISTS `M5vKHHE91E` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `M5vKHHE91E`;
 
 -- --------------------------------------------------------
 
@@ -29,6 +31,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin_tb` (
+  `admin_id` int(1) NOT NULL,
   `admin_username` varchar(300) NOT NULL,
   `admin_password` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -37,8 +40,8 @@ CREATE TABLE `admin_tb` (
 -- Dumping data for table `admin_tb`
 --
 
-INSERT INTO `admin_tb` (`admin_username`, `admin_password`) VALUES
-('iRequest', 'iRequest_12345');
+INSERT INTO `admin_tb` (`admin_id`, `admin_username`, `admin_password`) VALUES
+(0, 'iRequest', 'iRequest_12345');
 
 -- --------------------------------------------------------
 
@@ -51,8 +54,16 @@ CREATE TABLE `bookings_tb` (
   `users_id` int(10) NOT NULL,
   `inventory_item_id` int(10) NOT NULL,
   `date_requested` datetime NOT NULL,
-  `status` varchar(300) NOT NULL
+  `status` varchar(300) NOT NULL,
+  `category` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bookings_tb`
+--
+
+INSERT INTO `bookings_tb` (`booking_id`, `users_id`, `inventory_item_id`, `date_requested`, `status`, `category`) VALUES
+(1, 4, 1, '2019-05-23 10:30:00', '', 'Facilities');
 
 -- --------------------------------------------------------
 
@@ -65,6 +76,19 @@ CREATE TABLE `department_tb` (
   `department_name` varchar(500) NOT NULL,
   `department_description` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `department_tb`
+--
+
+INSERT INTO `department_tb` (`department_id`, `department_name`, `department_description`) VALUES
+(1, 'College of Computer Studies', 'CCS'),
+(2, 'College of Information Communications Technology', 'CICT'),
+(3, 'tr', 'tr'),
+(4, 'we', 'we'),
+(5, 'gr', 'gr'),
+(6, 'tt', 'tt'),
+(7, 'ty', 'ty');
 
 -- --------------------------------------------------------
 
@@ -98,6 +122,14 @@ CREATE TABLE `inventory_items_tb` (
   `inventory_cat_id` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `inventory_items_tb`
+--
+
+INSERT INTO `inventory_items_tb` (`inventory_item_id`, `item_name`, `item_description`, `inventory_cat_id`) VALUES
+(1, 'Auditorium', 'Saint Jacinta Hall', 1),
+(2, 'L300', 'ABC2133', 2);
+
 -- --------------------------------------------------------
 
 --
@@ -107,13 +139,20 @@ CREATE TABLE `inventory_items_tb` (
 CREATE TABLE `services_tb` (
   `services_id` int(10) NOT NULL,
   `users_id` int(10) NOT NULL,
-  `subject` varchar(300) NOT NULL,
-  `description` varchar(300) NOT NULL,
+  `request_subject` varchar(300) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `request_description` varchar(300) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `request_status` varchar(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `date_created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `date_started` datetime NOT NULL,
-  `date_closed` datetime NOT NULL,
-  `ticket_id` varchar(15) NOT NULL
+  `ticket_id` varchar(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `services_tb`
+--
+
+INSERT INTO `services_tb` (`services_id`, `users_id`, `request_subject`, `request_description`, `request_status`, `ticket_id`) VALUES
+(1, 0, 'DSS Water Dispenser', 'DSS Water Dispenser DSS Water Dispenser DSS Water Dispenser DSS Water Dispenser DSS Water Dispenser DSS Water Dispenser', 'Closed', '5Q8RVM2H'),
+(2, 1, 'DSS Water Dispenser 2', 'DSS Water Dispenser 2 DSS Water Dispenser 2 DSS Water Dispenser 2 DSS Water Dispenser 2 DSS Water Dispenser 2 DSS Water Dispenser 2 DSS Water Dispenser 2', 'Closed', 'WHJ6SYBU');
 
 -- --------------------------------------------------------
 
@@ -137,6 +176,16 @@ CREATE TABLE `users_tb` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `users_tb`
+--
+
+INSERT INTO `users_tb` (`user_id`, `first_name`, `middle_name`, `last_name`, `name_extension`, `mobile_number`, `address`, `username`, `password`, `department_id`, `role_type`, `user_status`) VALUES
+(1, 'Sonny', '', 'Roque', '', '+639174635022', 'CSFP', 'SonnyRoque', 'iRequest_12345', 1, 'Department Head', 'Active'),
+(2, 'Macrina Jane', 'Salenga', 'Versoza', '', '+639352313805', 'Lubao, Pampanga', 'Macrina JaneVersoza', 'iRequest_12345', 1, 'Department Member', 'Active'),
+(3, 'Lailanie', 'Muldong', 'Calma', '', '+639154562318', 'CSFP', 'LailanieCalma', 'iRequest_12345', 2, 'Department Head', 'Active'),
+(4, 'membertest', 'membertest', 'membertest', 'N/A', '09477309754', 'Clark Pampanga', 'membertest', '123', 2, 'Department Member', 'Active');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -144,7 +193,7 @@ CREATE TABLE `users_tb` (
 -- Indexes for table `admin_tb`
 --
 ALTER TABLE `admin_tb`
-  ADD PRIMARY KEY (`admin_username`);
+  ADD PRIMARY KEY (`admin_id`) USING BTREE;
 
 --
 -- Indexes for table `bookings_tb`
@@ -178,8 +227,7 @@ ALTER TABLE `inventory_items_tb`
 --
 ALTER TABLE `services_tb`
   ADD PRIMARY KEY (`services_id`),
-  ADD UNIQUE KEY `ticket_id` (`ticket_id`),
-  ADD KEY `services_tb_uifk_1` (`users_id`);
+  ADD UNIQUE KEY `ticket_id` (`ticket_id`);
 
 --
 -- Indexes for table `users_tb`
@@ -196,13 +244,13 @@ ALTER TABLE `users_tb`
 -- AUTO_INCREMENT for table `bookings_tb`
 --
 ALTER TABLE `bookings_tb`
-  MODIFY `booking_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `booking_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `department_tb`
 --
 ALTER TABLE `department_tb`
-  MODIFY `department_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `department_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `inventory_category_tb`
@@ -214,19 +262,19 @@ ALTER TABLE `inventory_category_tb`
 -- AUTO_INCREMENT for table `inventory_items_tb`
 --
 ALTER TABLE `inventory_items_tb`
-  MODIFY `inventory_item_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `inventory_item_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `services_tb`
 --
 ALTER TABLE `services_tb`
-  MODIFY `services_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `services_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users_tb`
 --
 ALTER TABLE `users_tb`
-  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
@@ -243,12 +291,6 @@ ALTER TABLE `bookings_tb`
 --
 ALTER TABLE `inventory_items_tb`
   ADD CONSTRAINT `inventory_items_tb_ibfk_1` FOREIGN KEY (`inventory_cat_id`) REFERENCES `inventory_category_tb` (`inventory_cat_id`);
-
---
--- Constraints for table `services_tb`
---
-ALTER TABLE `services_tb`
-  ADD CONSTRAINT `services_tb_ibfk_1` FOREIGN KEY (`users_id`) REFERENCES `users_tb` (`user_id`);
 
 --
 -- Constraints for table `users_tb`
