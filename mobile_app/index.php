@@ -31,7 +31,7 @@ include "../controllers/include_partial_functions.php";
                 <div class="row">
                     <div class="col-md-8 col-xs-12">
                         <div class="white-box">
-                            <form class="form-horizontal form-material" method="post" action="../login_action.php">
+                            <form class="form-horizontal form-material" method="post" action="login_action.php">
                                 <div class="form-group">
                                     <label class="col-md-12">Username</label>
                                     <div class="col-md-12">
