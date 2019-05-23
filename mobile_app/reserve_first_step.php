@@ -10,22 +10,6 @@ include "../database/config.php";
 <head>
    <?php get_headBlade_mobile(); ?>
    <style>
-       .automobile{
-           background-image: url('../resources/images/automobile.jpg');
-           width: 100%;
-           height:100%;
-           padding:100px;
-           background-size: 100% 100%;
-           border-style: none;
-       }
-       .facility{
-           background-image: url('../resources/images/facility.jpg');
-           width: 100%;
-           height:100%;
-           padding:100px;
-           background-size: 100% 100%;
-           border-style: none;
-       }
        <style>
         table.calendar		{ border-left:1px solid #999; }
         tr.calendar-row	{  }
@@ -77,127 +61,112 @@ include "../database/config.php";
             <div class="container-fluid">
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Dashboard</h4>
+                        <h4 class="page-title">Scheduling</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <ol class="breadcrumb">
-                            <li class="active">Dashboard</li>
+                            <li class="active">Scheduling</li>
                         </ol>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
-                <div class="row" id="choose_buttons">
-                    <!--col -->
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="text-align: center;font-weight:bold;">
-                        Process Reservation for:
-                            <br>
-                            <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="white-box" id="choose_buttons">
+                            <h3 class="box-title">Select Reservation</h3>
+                            <div class="form-group"></div>
+                            <div class="form-group">
+                                <center>
+                                    <label class="col-md-12">Reservation for Automobile</label>
+                                    <button id="automobile" class="btn btn-success" onclick = "showCalendar('Automobile')">  Select </button>                                  
+                                </center>
+                            </div>
+                            <div class="form-group">
+                                <center>
+                                    <label class="col-md-12">Reservation for Facilities &nbsp &nbsp &nbsp</label>
+                                    <button id="facility" class="btn btn-success" onclick = "showCalendar('Facilities')">  Select </button>                                  
+                                </center
+                            ></div>
+                        </div>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                        <button id="automobile" class="automobile" onclick = "showCalendar('Automobile')">
-                        </button>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="text-align: center;">
-                        <br>
-                       OR
-                       <br>
-                       <br>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <button id="facility" class="facility" onclick = "showCalendar('Facilities')">
-                        </button>
-                       </div>
                 </div>
-
-                <div class="row" id="facility_calendar" style = "display:none;">
-                    <!--col -->
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" id = "calendar">
-                       <?php
-                           echo getFacilityCalendar($conn, date("m"), date("Y"));
-                       ?>
-                            
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                        <p></p>
-                        <br>
-                        <br>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <form class="form-horizontal form-material" method="post" action="reserve_action.php">
-                                <div class="form-group">
-                                    <label class="col-md-12">What to Reserve?</label>
-                                    <div class="col-md-12">
-                                    <?php
-                                        getFacilitiesDropDown($conn);
-                                    ?>
-                                 </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="example-email" class="col-md-12">Reserve From</label>
-                                    <div class="col-md-12">
-                                        <input type="datetime-local" class="form-control form-control-line" name="date_from_requested" id="example-email" required> </div>
-                                        <input type = "hidden" name = "category" value = "Facilities" required>
+                <div class="row">
+                    <div id="facility_calendar" style="display:none">
+                        <div class="white-box">
+                            <div class="col-md-6">                            
+                                <?php echo getFacilityCalendar($conn, date("m"), date("Y")); ?>
+                            </div>
+                            <div class="col-md-6">
+                                <form class="form-horizontal form-material" method="post" action="reserve_action.php">
+                                    <div class="form-group">
+                                        <label class="col-md-12">Facility to Reserve</label>
+                                        <div class="col-md-12">
+                                            <?php getFacilitiesDropDown($conn); ?>
+                                        </div>
                                     </div>
-                                <div class="form-group">
-                                    <label for="example-email" class="col-md-12">Reserve To</label>
-                                    <div class="col-md-12">
-                                        <input type="datetime-local" class="form-control form-control-line" name="date_to_requested" id="example-email" required> </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-12">
-                                        <button class="btn btn-success" name="Login">Send Request</button>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Reservation Start Date</label>
+                                        <div class="col-md-12">
+                                            <input type="datetime-local" class="form-control form-control-line" name="date_from_requested" required>
+                                            <input type = "hidden" name = "category" value = "Facilities" required>    
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
-                            <button class="btn btn-success" onclick = "hideCalendar()">Choose Again</button>
-                    </div>
-                    
-                </div>
-
-                <div class="row" id="automobile_calendar" style = "display:none;">
-                    <!--col -->
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" id = "calendar">
-                       <?php
-                            echo getAutomobileCalendar($conn, date("m"), date("Y"));
-                       ?>
-                            
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                        <p></p>
-                        <br>
-                        <br>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <form class="form-horizontal form-material" method="post" action="reserve_action.php">
-                                <div class="form-group">
-                                    <label class="col-md-12">What to Reserve?</label>
-                                    <div class="col-md-12">
-                                    <?php
-                                        getAutomobileDropDown($conn);
-                                    ?>
-                                 </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="example-email" class="col-md-12">Reserve From</label>
-                                    <div class="col-md-12">
-                                        <input type="datetime-local" class="form-control form-control-line" name="date_from_requested" id="example-email" required> </div>
-                                        <input type = "hidden" name = "category" value = "Automobile" required>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Reservation End Date</label>
+                                        <div class="col-md-12">
+                                            <input type="datetime-local" class="form-control form-control-line" name="date_to_requested" required>
+                                            <input type = "hidden" name = "category" value = "Facilities" required>    
+                                        </div>
                                     </div>
-                                <div class="form-group">
-                                    <label for="example-email" class="col-md-12">Reserve To</label>
-                                    <div class="col-md-12">
-                                        <input type="datetime-local" class="form-control form-control-line" name="date_to_requested" id="example-email" required> </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-12">
-                                        <button class="btn btn-success" name="Login">Send Request</button>
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <button class="btn btn-success" name="reservation_button">Request Reservation</button>
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
-                            <button class="btn btn-success" onclick = "hideCalendar()">Choose Again</button>
+                                </form>
+                                <button class="btn btn-danger" onclick = "hideCalendar()">Choose Again</button>                                
+                            </div>
+                        </div> 
                     </div>
-                    
-                </div>
+                    <div id="automobile_calendar" style="display:none">
+                        <div class="white-box">
+                            <div class="col-md-6">                            
+                                <?php getAutomobileCalendar($conn, date("m"), date("Y")); ?>
+                            </div>
+                            <div class="col-md-6">
+                                <form class="form-horizontal form-material" method="post" action="reserve_action.php">
+                                    <div class="form-group">
+                                        <label class="col-md-12">Automobile to Reserve</label>
+                                        <div class="col-md-12">
+                                            <?php getAutomobileDropDown($conn); ?>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Reservation Start Date</label>
+                                        <div class="col-md-12">
+                                            <input type="datetime-local" class="form-control form-control-line" name="date_from_requested" required>
+                                            <input type = "hidden" name = "category" value = "Facilities" required>    
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Reservation End Date</label>
+                                        <div class="col-md-12">
+                                            <input type="datetime-local" class="form-control form-control-line" name="date_to_requested" required>
+                                            <input type = "hidden" name = "category" value = "Facilities" required>    
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <button class="btn btn-success" name="reservation_button">Request Reservation</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <button class="btn btn-danger" onclick = "hideCalendar()">Choose Again</button>                                
+                            </div>
+                        </div> 
+                    </div>                                      
+                </div>          
+                  
             </div>
             <!-- /.container-fluid -->
         </div>
