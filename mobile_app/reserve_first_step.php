@@ -76,9 +76,7 @@ include "../database/config.php";
                             <div id='calendar'></div>
                             <div style='clear:both'></div>
                         </div>
-                    </div>
-                    <div class="col-md-2 col-sm-4 col-xs-12 pull-right"> </div>
-                    <div class="col-md-2 col-sm-4 col-xs-12 pull-right"> </div>
+                    </div>                
                     <div class="col-md-6">
                         <div class="white-box">
                             <?php $category = "Facilities"; getReservationForm($conn, $category) ?>
@@ -236,10 +234,10 @@ include "../database/config.php";
 			header: {
 				left: 'title',
 				center: 'agendaDay,agendaWeek,month',
-				right: 'prev,next today'
+				// right: 'prev,next today'
 			},
 			editable: false,
-			firstDay: 1, //  1(Monday) this can be changed to 0(Sunday) for the USA system
+			firstDay: 1,
 			selectable: false,
 			defaultView: 'month',
 
@@ -251,9 +249,9 @@ include "../database/config.php";
                 agendaDay: 'dddd d'
             },
             titleFormat: {
-                month: 'MMMM yyyy', // September 2009
-                week: "MMMM yyyy", // September 2009
-                day: 'MMMM yyyy'                  // Tuesday, Sep 8, 2009
+                month: 'MMMM yyyy',
+                week: "MMMM yyyy",
+                day: 'MMMM yyyy'
             },
 			allDaySlot: false,
 			selectHelper: true,
@@ -272,7 +270,7 @@ include "../database/config.php";
 				}
 				calendar.fullCalendar('unselect');
 			},
-			droppable: true, // this allows things to be dropped onto the calendar !!!
+			droppable: false, // this allows things to be dropped onto the calendar !!!
 			drop: function(date, allDay) { // this function is called when something is dropped
 
 				// retrieve the dropped element's stored Event Object
@@ -298,50 +296,7 @@ include "../database/config.php";
 			},
 
 			events: [
-				{
-					title: 'All Day Event',
-					start: new Date(y, m, 1)
-				},
-				{
-					id: 999,
-					title: 'Repeating Event',
-					start: new Date(y, m, d-3, 16, 0),
-					allDay: false,
-					className: 'info'
-				},
-				{
-					id: 999,
-					title: 'Repeating Event',
-					start: new Date(y, m, d+4, 16, 0),
-					allDay: false,
-					className: 'info'
-				},
-				{
-					title: 'Meeting',
-					start: new Date(y, m, d, 10, 30),
-					allDay: false,
-					className: 'important'
-				},
-				{
-					title: 'Lunch',
-					start: new Date(y, m, d, 12, 0),
-					end: new Date(y, m, d, 14, 0),
-					allDay: false,
-					className: 'important'
-				},
-				{
-					title: 'Birthday Party',
-					start: new Date(y, m, d+1, 19, 0),
-					end: new Date(y, m, d+1, 22, 30),
-					allDay: false,
-				},
-				{
-					title: 'Click for Google',
-					start: new Date(y, m, 28),
-					end: new Date(y, m, 29),
-					url: 'http://google.com/',
-					className: 'success'
-				}
+				
 			],
 		});
 
