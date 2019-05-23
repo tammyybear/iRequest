@@ -69,7 +69,7 @@ include "../database/config.php";
         </nav>
         <!-- Left navbar-header -->
        <?php 
-        get_NavBlade();
+        get_NavBlade_mobile();
        ?>
         <!-- Left navbar-header end -->
         <!-- Page Content -->
