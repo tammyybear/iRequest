@@ -71,7 +71,7 @@ include "../database/config.php";
                     <!-- /.col-lg-12 -->
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-5">
                         <div id='wrap'>
                             <div id='calendar'></div>
                             <div style='clear:both'></div>
@@ -84,12 +84,25 @@ include "../database/config.php";
                         </div>
                     </div>                    
                 </div>
+                
                 <div class="row">
                     <h3 class="box-title"></h3>
                     <div class="col-md-2 col-sm-4 col-xs-12 pull-right">
                         
                     </div>
-                </div>                
+                </div>
+                <div class="row">
+                    <h3 class="box-title"></h3>
+                    <div class="col-md-2 col-sm-4 col-xs-12 pull-right">
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <h3 class="box-title"></h3>
+                    <div class="col-md-2 col-sm-4 col-xs-12 pull-right">
+                        
+                    </div>
+                </div>                            
 
                 <div class="row" id="table_list">
                     <div class="col-sm-12">
