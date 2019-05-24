@@ -284,7 +284,7 @@ if(!function_exists('getAllReservationData')){
         include "inventory_functions.php";
         // $today = date.now();
         // $query = mysqli_query($conn, "SELECT * from bookings_tb where date_from_requested >= '$today' ORDER BY date_from_requested ASC");      
-        $query = mysqli_query($conn, "SELECT * from bookings_tb");
+        $query = mysqli_query($conn, "SELECT * FROM bookings_tb");
         if(! $query){
             echo mysqli_error($conn);
         }else{
