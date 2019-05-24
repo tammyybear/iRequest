@@ -81,6 +81,4 @@ if(!function_exists('getInventoryCatType')){
         return $category;
     }
 }
-
-
 ?>

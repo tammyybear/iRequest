@@ -36,4 +36,10 @@ if(!function_exists('checkDatesValidity')){
         return $result;
     }
 }
+
+if(!function_exists('getMonthName')){
+    function getMonthName($month_number){
+        
+    }
+}
 ?>
