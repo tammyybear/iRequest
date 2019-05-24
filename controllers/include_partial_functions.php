@@ -268,7 +268,7 @@ if(!function_exists('get_NavBlade')){
                                 <a href="index.php" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Login Page</span></a>
                             </li>
                             <li>
-                                <a href="mobile_app/installer/iRequest.zip" download class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Download App</span></a>
+                                <a href="mobile_app/installer/iRequest.apk" download class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Download App</span></a>
                             </li>                            
                         </ul>
                     </div>
