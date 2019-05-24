@@ -91,22 +91,22 @@ include "../database/config.php";
                     </div>
                 </div>
                 <div class="row">
-                    <div id="facility_calendar" style="display:none">
-                        <div class="col-md-6">                            
+                    <div class="container" id="facility_calendar" style="display:none">
+                        <div class="col-md-6 col-xs-12">                            
                             <?php echo getFacilityCalendar($conn, date("m"), date("Y")); ?>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-xs-12">
                             <div class="white-box">
                                 <?php $category = "Facilities"; getReservationForm($conn, $category) ?>
                                 <button class="btn btn-danger" onclick = "hideCalendar()">Choose Again</button>                                                            
                             </div>
                         </div>
                     </div>
-                    <div id="automobile_calendar" style="display:none">
-                        <div class="col-md-6">                            
+                    <div class="container" id="automobile_calendar" style="display:none">
+                        <div class="col-md-6 col-xs-12">                            
                             <?php echo getAutomobileCalendar($conn, date("m"), date("Y")); ?>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-xs-12">
                             <div class="white-box">
                                 <?php $category = "Automobile"; getReservationForm($conn, $category) ?>
                                 <button class="btn btn-danger" onclick = "hideCalendar()">Choose Again</button>                                
