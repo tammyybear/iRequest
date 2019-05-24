@@ -1,5 +1,6 @@
 <?php
 include "controllers/include_partial_functions.php";
+include "controllers/services_functions.php";
 include "controllers/users_functions.php";
 include "database/config.php";
 include "controllers/check_login.php";
@@ -57,23 +58,25 @@ include "controllers/bookings_functions.php";
                         </ol>
                     </div>
                 </div>
+                
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="white-box">                                             
+                        <div class="white-box">                                                   
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th>Person Who Reserved</th>
+                                            <th>Reservation from</th>
                                             <th>Reserved Automobile / Facility</th>
                                             <th>Reservation Date Start</th>
                                             <th>Reservation Date End</th>
                                             <th>Reservation Status</th>
                                             <th>Category</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php  getAllReservationData ($conn)?>
+                                      <?php  getAllReservationData ($conn)?>
                                     </tbody>
                                 </table> 
                             </div>
