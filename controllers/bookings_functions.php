@@ -277,4 +277,34 @@ if(!function_exists('getUsersReservationData_mobile')){
         }
     }
 }
+
+if(!function_exists('getAllReservationData')){
+    function getAllReservationData($conn){
+        include "users_functions.php";
+        include "inventory_functions.php";
+        // $today = date.now();
+        // $query = mysqli_query($conn, "SELECT * from bookings_tb where date_from_requested >= '$today' ORDER BY date_from_requested ASC");      
+        $query = mysqli_query($conn, "SELECT * from bookings_tb");
+        if(! $query){
+            echo mysqli_error($conn);
+        }else{
+            if(mysqli_num_rows($query)>0){
+                while($row = mysqli_fetch_array($query)){
+                    ?>
+                     <tr>
+                        <td class="txt-oflo"><?php echo getUserDetailsById($conn, $row['users_id'])[0] ?></td>                     
+                        <td class="txt-oflo"><?php echo getInventoryDetailsById($conn, $row['inventory_item_id'])[0]?></td>
+                        <td class="txt-oflo"><?php echo $row['date_from_requested'] ?></td>
+                        <td class="txt-oflo"><?php echo $row['date_to_requested'] ?></td>
+                        <td class="txt-oflo"><?php echo $row['status'] ?></td>
+                        <td class="txt-oflo"><?php echo $row['category'] ?></td>                    
+                    </tr>
+                    <?php
+                }
+            }else{
+                echo "No Reservations Found";
+            }
+        }
+    }
+}
 ?>

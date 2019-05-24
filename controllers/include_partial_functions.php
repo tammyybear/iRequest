@@ -194,7 +194,7 @@ if(!function_exists('get_NavBlade')){
                                 <a href="dashboard_admin.php" class="waves-effect"><i class="fa fa-dashboard fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
                             </li>
                             <li>
-                                <a href="schedules.php" class="waves-effect"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i><span class="hide-menu">Schedules</span></a>
+                                <a href="reservations_admin.php" class="waves-effect"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i><span class="hide-menu">Reservations</span></a>
                             </li>
                             <li>
                                 <a href="services_admin.php" class="waves-effect"><i class="fa fa-tasks fa-fw" aria-hidden="true"></i><span class="hide-menu">Services</span></a>
@@ -227,7 +227,7 @@ if(!function_exists('get_NavBlade')){
                                     <a href="dashboard_department_head.php" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
                                 </li>
                                 <li>
-                                    <a href="schedules.php" class="waves-effect"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i><span class="hide-menu">Schedules</span></a>
+                                    <a href="schedules_dept_head.php" class="waves-effect"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i><span class="hide-menu">Reservations</span></a>
                                 </li>
                                 <li>
                                     <a href="services_user.php" class="waves-effect"><i class="fa fa-tasks fa-fw" aria-hidden="true"></i><span class="hide-menu">Services</span></a>
@@ -268,7 +268,7 @@ if(!function_exists('get_NavBlade')){
                                 <a href="index.php" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Login Page</span></a>
                             </li>
                             <li>
-                                <a href="download.php" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Download App</span></a>
+                                <a href="mobile_app/installer/iRequest.zip" download class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Download App</span></a>
                             </li>                            
                         </ul>
                     </div>
