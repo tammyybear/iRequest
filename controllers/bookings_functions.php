@@ -292,11 +292,19 @@ if(!function_exists('getAllReservationData')){
                     <td class="txt-oflo"><?php echo getInventoryDetailsById($conn, $row['inventory_item_id'])[0]?></td>
                     <td class="txt-oflo"><?php echo $row['date_from_requested'] ?></td>
                     <td class="txt-oflo"><?php echo $row['date_to_requested'] ?></td>
-                    <td class="txt-oflo"><?php echo $row['status'] ?></td>
+                    <!-- <td class="txt-oflo"><?php echo $row['status'] ?></td> -->
                     <td class="txt-oflo"><?php echo $row['category'] ?></td>
                     <td class="txt-oflo">
-                        <a class = "btn btn-primary" href="reservations_admin_action.php<?php echo '?id='.$row['booking_id'] & '&checker=1' & '&item='.$row['inventory_item_id']; ?>">Approve</a>
-                        <a class = "btn btn-danger" href="reservations_admin_action.php<?php echo '?id='.$row['booking_id'] & '&checker=2'; ?>">Disapprove</a>
+                        <?php
+                            if($row['status'] == "Pending"){
+                                ?>
+                                    <a class = "btn btn-primary" href="reservations_admin_action.php<?php echo '?id='.$row['booking_id'] . '&checker=1' . '&item='.$row['inventory_item_id'] . '&from=' .$row['date_from_requested'] . '&to=' .$row['date_to_requested']; ?>">Approve</a>
+                                    <a class = "btn btn-danger" href="reservations_admin_action.php<?php echo '?id='.$row['booking_id'] & '&checker=2'; ?>">Disapprove</a>
+                                <?php
+                            }else{
+                                echo $row['status'];
+                            }
+                        ?>
                     </td> 
                </tr>
                <?php

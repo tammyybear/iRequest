@@ -70,7 +70,6 @@ include "controllers/bookings_functions.php";
                                             <th>Reserved Automobile / Facility</th>
                                             <th>Reservation Date Start</th>
                                             <th>Reservation Date End</th>
-                                            <th>Reservation Status</th>
                                             <th>Category</th>
                                             <th>Action</th>
                                         </tr>

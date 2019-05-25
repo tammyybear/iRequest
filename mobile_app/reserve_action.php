@@ -17,10 +17,17 @@ if(checkDatesValidity($date_from_requested, $date_to_requested) == 1){
     if(countResult($conn, "SELECT * from bookings_tb where users_id = '$user_id' and inventory_item_id = '$inventory_item_id' and date_from_requested = '$date_from_requested' and date_to_requested = '$date_to_requested'") == 1){
         redirectPageWithAlert("reserve_first_step.php", "You have already made a reservation for this.");
     }else{
-        if(updateDatabase($conn, "INSERT into bookings_tb(users_id,inventory_item_id, date_from_requested, date_to_requested, status, category) VALUES('$user_id', '$inventory_item_id', '$date_from_requested', '$date_to_requested', '$status', '$category')") == 1){
-            redirectPageWithAlert("reserve_first_step.php", "Reservation Request Sent. Please make sure the letter was sent to the Admin for approval.");
+
+        if(countResult($conn, "SELECT * from booking_tb where date_from_requested = '$date_from_requested' or date_to_requested = '$date_to_requested' and inventory_item_id = '$inventory_item_id' and status = 'Approve'") == 1){
+            redirectPageWithAlert("reserve_first_step.php", "There is already reservation for this");
         }else{
-            redirectPageWithAlert("reserve_first_step.php", "Error. Please Try Again");
+
+            if(updateDatabase($conn, "INSERT into bookings_tb(users_id,inventory_item_id, date_from_requested, date_to_requested, status, category) VALUES('$user_id', '$inventory_item_id', '$date_from_requested', '$date_to_requested', '$status', '$category')") == 1){
+                redirectPageWithAlert("reserve_first_step.php", "Reservation Request Sent. Please make sure the letter was sent to the Admin for approval.");
+            }else{
+                redirectPageWithAlert("reserve_first_step.php", "Error. Please Try Again");
+            }
+
         }
     }
 }else{
