@@ -118,7 +118,7 @@ include "../database/config.php";
                 </div>
 
                 <div class="row" id="table_list">
-                    <div class="col-sm-8">
+                    <div class="col-sm-12">
                         <div class="white-box">
                             <h3 class="box-title">My Reservation List</h3>
                             <div class="col-md-2 col-sm-4 col-xs-12 pull-right"> </div>
