@@ -108,6 +108,7 @@ include "../database/config.php";
                         <div class="col-md-4 col-xs-12">                            
                             <?php echo getAutomobileCalendar($conn, date("m"), date("Y")); ?>
                         </div>
+                        <div class="col-md-2 col-xs-12"></div>
                         <div class="col-md-6 col-xs-12">
                             <div class="white-box">
                                 <?php $category = "Automobile"; getReservationForm($conn, $category) ?>
