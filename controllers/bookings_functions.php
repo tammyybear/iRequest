@@ -204,7 +204,7 @@ if(!function_exists('getAutomobileDropDown')){
         <?php
         while($row = mysqli_fetch_array($query)){
             ?>
-                <option value = "<?php echo $row['inventory_item_id'] ?>"><?php echo $row['item_name'] ?></option>
+                <option value = "<?php echo $row['inventory_item_id'] ?>"><?php echo $row['item_name']." - ".$row['item_description'] ?></option>
             <?php   
         }  
         ?>
@@ -263,7 +263,7 @@ if(!function_exists('getUsersReservationData_mobile')){
                 while($row = mysqli_fetch_array($query)){
                     ?>
                      <tr>
-                        <td class="txt-oflo"><?php echo getInventoryDetailsById($conn, $row['inventory_item_id'])[0]?></td>
+                        <td class="txt-oflo"><?php echo getInventoryDetailsById($conn, $row['inventory_item_id'])[0]." - ".getInventoryDetailsById($conn, $row['inventory_item_id'])[1]?></td>
                         <td class="txt-oflo"><?php echo $row['date_from_requested'] ?></td>
                         <td class="txt-oflo"><?php echo $row['date_to_requested'] ?></td>
                         <td class="txt-oflo"><?php echo $row['status'] ?></td>
@@ -289,7 +289,7 @@ if(!function_exists('getAllReservationData')){
                 ?>
                 <tr>
                     <td class="txt-oflo"><?php echo getUserDetailsById($conn, $row['users_id'])[0] ?></td>                     
-                    <td class="txt-oflo"><?php echo getInventoryDetailsById($conn, $row['inventory_item_id'])[0]?></td>
+                    <td class="txt-oflo"><?php echo getInventoryDetailsById($conn, $row['inventory_item_id'])[0]." - ".getInventoryDetailsById($conn, $row['inventory_item_id'])[1]?></td>
                     <td class="txt-oflo"><?php echo $row['date_from_requested'] ?></td>
                     <td class="txt-oflo"><?php echo $row['date_to_requested'] ?></td>
                     <!-- <td class="txt-oflo"><?php echo $row['status'] ?></td> -->
