@@ -11,8 +11,6 @@ $get_item = $_GET['item'];
 $get_from = $_GET['from'];
 $get_to = $_GET['to'];
 
-exit();
-
 if($get_checker == "1"){
 
     if(countResult ($conn, "SELECT * from bookings_tb where status = 'Approve' and inventory_item_id = '$get_item' and date_from_requested BETWEEN '$get_from' and '$get_to' or date_to_requested BETWEEN '$get_from' and '$get_to' ") == 1){
