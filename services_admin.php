@@ -67,13 +67,13 @@ include "controllers/check_login.php";
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="white-box">
-                            <form class="form-horizontal form-material" method="post" action="services_user.php">
+                            <!-- <form class="form-horizontal form-material" method="post" action="services_user.php">
                                 <div class="form-group">
                                     <div class="col-sm-12">
                                         <button class="btn btn-success">Request Service</button>
                                     </div>
                                 </div>
-                            </form>                            
+                            </form>                             -->
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
