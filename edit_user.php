@@ -53,7 +53,7 @@ include "controllers/check_login.php";
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <ol class="breadcrumb">
                             <li><a href="user_management.php">User Management</a></li>
-                            <li class="active">Add User</li>
+                            <li class="active">Edit User</li>
                         </ol>
                     </div>
                     <!-- /.col-lg-12 -->

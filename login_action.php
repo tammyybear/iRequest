@@ -24,7 +24,7 @@ $password = $_POST['password'];
             }else{
                 $_SESSION['role_type'] = $role_type;
                 $get_id =getUserDetailsByUsername($conn, $username)[11];
-                redirectPagewithAlert("edit_user.php?id= $get_id", "Welcome Department Member");                
+                redirectPagewithAlert("edit_user.php?id=$get_id", "Welcome Department Member");                
             }
         }else{
             redirectPagewithAlert("index.php", "User account not active, please see Admin / Dept. Head");
