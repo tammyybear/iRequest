@@ -255,7 +255,7 @@ if(!function_exists('getUsersReservationData_mobile')){
         include "users_functions.php";
         include "inventory_functions.php";
         $user_id = getUserDetailsByUsername($conn, $_SESSION['user'])[11];
-        $query = mysqli_query($conn, "SELECT * from bookings_tb where users_id = '$user_id' ORDER BY date_from_requested ASC");      
+        $query = mysqli_query($conn, "SELECT * from bookings_tb where users_id = '$user_id' ORDER BY date_from_requested DESC");      
         if(! $query){
             echo mysqli_error($conn);
         }else{
