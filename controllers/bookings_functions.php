@@ -22,7 +22,7 @@ if(!function_exists('getFacilityCalendar')){
         // $date = $month . "-" . $list_day . "-" . $year;
         $date = $month . "-" . $year;
 			$calendar.= '<div class="day-number">'.$list_day.'</div>';
-            $query = mysqli_query($conn, "SELECT * from bookings_tb where category = '$category' and DATE_FORMAT(date_from_requested, '%m-%Y') >= '$date' and status = 'Approve'");
+            $query = mysqli_query($conn, "SELECT * from bookings_tb where category = '$category' and DATE_FORMAT(date_from_requested, '%m-%Y') >= '$date' and (status = 'Approve' or status = 'Pending')");
             if(!$query){
                 $calendar.= str_repeat('<p>' . mysqli_error($conn) . '</p>',2);
             }else{
