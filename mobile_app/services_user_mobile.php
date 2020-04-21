@@ -24,7 +24,7 @@ include "../controllers/check_login.php";
                 </a>
                 <div class="top-left-part">
                     <a class="logo" alt="logo">
-                        <b><img src="resources/images/logo.png"/></b>
+                        <b><img src="../resources/images/logo.png"/></b>
                         <small class="hidden-xs"><b>request</b></small>
                     </a>
                 </div>
