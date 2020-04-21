@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 21, 2019 at 04:36 AM
+-- Generation Time: Apr 21, 2020 at 01:57 AM
 -- Server version: 8.0.13-4
--- PHP Version: 7.2.17-0ubuntu0.18.04.1
+-- PHP Version: 7.2.24-0ubuntu0.18.04.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,10 +19,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `M5vKHHE91E`
+-- Database: `DF84qdcFzw`
 --
-CREATE DATABASE IF NOT EXISTS `M5vKHHE91E` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-USE `M5vKHHE91E`;
 
 -- --------------------------------------------------------
 
@@ -41,7 +39,7 @@ CREATE TABLE `admin_tb` (
 --
 
 INSERT INTO `admin_tb` (`admin_id`, `admin_username`, `admin_password`) VALUES
-(0, 'iRequest', 'iRequest_12345');
+(0, 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -53,7 +51,8 @@ CREATE TABLE `bookings_tb` (
   `booking_id` int(10) NOT NULL,
   `users_id` int(10) NOT NULL,
   `inventory_item_id` int(10) NOT NULL,
-  `date_requested` datetime NOT NULL,
+  `date_from_requested` datetime NOT NULL,
+  `date_to_requested` datetime NOT NULL,
   `status` varchar(300) NOT NULL,
   `category` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -62,8 +61,9 @@ CREATE TABLE `bookings_tb` (
 -- Dumping data for table `bookings_tb`
 --
 
-INSERT INTO `bookings_tb` (`booking_id`, `users_id`, `inventory_item_id`, `date_requested`, `status`, `category`) VALUES
-(1, 4, 1, '2019-05-23 10:30:00', '', 'Facilities');
+INSERT INTO `bookings_tb` (`booking_id`, `users_id`, `inventory_item_id`, `date_from_requested`, `date_to_requested`, `status`, `category`) VALUES
+(1, 4, 1, '2020-04-21 09:48:00', '2020-04-21 09:49:00', 'Approve', 'Facilities'),
+(2, 4, 1, '2020-04-21 09:48:00', '2020-04-21 09:50:00', 'Pending', 'Facilities');
 
 -- --------------------------------------------------------
 
@@ -244,7 +244,7 @@ ALTER TABLE `users_tb`
 -- AUTO_INCREMENT for table `bookings_tb`
 --
 ALTER TABLE `bookings_tb`
-  MODIFY `booking_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `booking_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `department_tb`

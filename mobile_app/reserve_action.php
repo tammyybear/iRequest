@@ -17,7 +17,7 @@ if(checkDatesValidity($date_from_requested, $date_to_requested) == 1){
     if(countResult($conn, "SELECT * from bookings_tb where users_id = '$user_id' and inventory_item_id = '$inventory_item_id' and date_from_requested = '$date_from_requested' and date_to_requested = '$date_to_requested'") == 1){
         redirectPageWithAlert("reserve_first_step.php", "You have already made a reservation for this.");
     }else{
-        if(countResult($conn, "SELECT * from booking_tb where inventory_item_id = '$inventory_item_id' and (date_from_requested BETWEEN '$date_from_requested' and '$date_to_requested' or date_to_requested BETWEEN '$date_from_requested' and '$date_to_requested') and status = 'Approve'") == 1){
+        if(countResult($conn, "SELECT * from booking_tb where inventory_item_id = '$inventory_item_id' and (date_from_requested BETWEEN '$date_from_requested' and '$date_to_requested' or date_to_requested BETWEEN '$date_from_requested' and '$date_to_requested')") == 1){
             redirectPageWithAlert("reserve_first_step.php", "There is already reservation for this");
         }else{
 
